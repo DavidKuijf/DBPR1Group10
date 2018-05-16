@@ -13,11 +13,13 @@
    
     <body class="bgimg">
         <div class="center">
-            <div class="menu">
-                <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
-                <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
-                <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
-                <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
+            <div class="fade-in"> 
+                <div class="menu">
+                    <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
+                    <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
+                    <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
+                    <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
+                </div>
             </div>
         </div>
     </body>
