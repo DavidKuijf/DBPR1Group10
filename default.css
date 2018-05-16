@@ -1,0 +1,8 @@
+.bgimg {
+    margin: 0;
+    background-image: url('/Images/Background.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment:fixed;
+}
