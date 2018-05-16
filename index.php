@@ -9,14 +9,18 @@
     </style>
     <head >
         <link rel="stylesheet" type="text/css" href="default.css">
+        <link rel"animationsheet" type="text/css" hraf="animation.css"
+        
+    </head>
+        
+        
+    <body class="bgimg" style="margin: 0">
+        <div class="fade-in"> <h1>REEEEEEEEEEEE</h1></div>   
         <?php
             echo "Hello World!";
         ?> 
          
-    </head>
-        <div class="bgimg">
-        <body class="bgimg" style="margin: 0">
-        
+        <a href="/testpage.php">
        
 
     </body>
