@@ -3,17 +3,29 @@ body,h1 html {
     font-family: Raleway, sans-serif;
     color: white;
     text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
-    position: fixed;
+    
 
 }
 
 .bgimg {
-    margin: 0;
+    
     background-image: url('/Images/Background.jpg');
-    min-height: 100%;
+    height: device-height;
+    width: device-width;
     background-position: center;
     background-size: cover;
     background-attachment:fixed;
+}
+
+.center {
+    position: absolute;
+    
+    left: 0;
+    top: 50%;
+    width: 100%;
+
+    text-align: center;
+    font-size: 18px;
 }
 
 .fade-in {
