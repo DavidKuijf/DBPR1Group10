@@ -4,13 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         
-        body,h1 {
-            font-family: Raleway, sans-serif;
-            color: white;
-            text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
-
-        }
-        body, html {height: 100%}
+        
     }
     </style>
     <head >
