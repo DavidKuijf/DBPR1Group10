@@ -4,11 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <head>
-        <div class="bgimg">
+        <meta name="robots" content="noindex">
+        <link rel="stylesheet" type="text/css" href="default.css">
+        <link rel"animationsheet" type="text/css" hraf="animation.css"
+       
         
         
     </head>
-    <body style="margin: 0">
+    <body class="bgimg">
         
        
 
