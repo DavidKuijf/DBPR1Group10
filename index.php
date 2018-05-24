@@ -13,12 +13,29 @@
    
     <body class="bgimg">
 
-        <form action="index.php" submit="" method="post">
-        Name: <input type="text" name="name"><br>
-        E-mail: <input type="text" name="email"><br>
-        <input type="submit">
-        </form>
 
+    <script>
+    var variablejs = "<?php echo $variablephp; ?>" ;
+    alert("category = " + variablejs);
+    </script>
+        <div id="loginbit">
+        </div>
+       
+        <script>
+            
+            
+            if(<?php echo $_SESSION ?>=null){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("loginbit").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "loginform.html", true);
+            xhttp.send();
+            }
+        </script>
+        
         <?php
             function addrecord(){
                 $servername = "localhost";
@@ -49,14 +66,15 @@
             ?>
 
         
-        <div class="center">
+        <div id="centerscreen" class="center">
             <div class="fade-in"> 
                 <h1>MENU</h1>
-                <div class="menu">
+                <div id="menu" class="menu">
                     <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
                     <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
                     <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
                     <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
+
                 </div>
             </div>
         </div>

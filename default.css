@@ -7,6 +7,13 @@ body,h1 html {
 
 }
 
+.loginform{
+  border: 3px solid #f1f1f1;
+  display: inline-block;
+}
+
+
+
 .bgimg {
     
     background-image: url('/Images/Background.jpg');
