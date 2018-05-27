@@ -16,7 +16,7 @@ body,h1 html {
 
 .bgimg {
     
-    background-image: url('/Images/Background.jpg');
+    background-image: url('Images/Background.jpg');
     height: device-height;
     width: device-width;
     background-position: center;
@@ -52,6 +52,10 @@ body,h1 html {
 
     text-align: center;
     font-size: 18px;
+}
+
+.formfont {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .fade-in {

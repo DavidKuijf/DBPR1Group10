@@ -69,12 +69,20 @@
         <div id="centerscreen" class="center">
             <div class="fade-in"> 
                 <h1>MENU</h1>
+<<<<<<< HEAD
                 <div id="menu" class="menu">
                     <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
                     <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
                     <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
                     <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
 
+=======
+                <div class="menu">
+                    <a href="testpage.php" class"menubutton"><img src="Images/bats.jpg"></a>
+                    <a href="testpage.php" class"menubutton"><img src="Images/bats.jpg"></a>
+                    <a href="testpage.php" class"menubutton"><img src="Images/bats.jpg"></a>
+                    <a href="testpage.php" class"menubutton"><img src="Images/bats.jpg"></a>
+>>>>>>> 7187001b18dc9266b44e9e93c223fcfa720d1488
                 </div>
             </div>
         </div>
