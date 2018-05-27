@@ -1,0 +1,11 @@
+form {
+    margin: auto;
+    width: 50%;
+    border: 3px solid orangered;
+    padding: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input {
+    margin: auto;
+}
