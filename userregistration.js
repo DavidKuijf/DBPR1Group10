@@ -42,6 +42,16 @@ $(document).ready(function()
         {
             $('#number').removeClass('valid').addClass('invalid');
         }
+
+        if (password == document.getElementById('confirm_password').value)
+        {
+            $('#confirm_password').removeClass('nomatch').addClass('match');
+        }
+        else
+        {
+            $('#confirm_password').removeClass('match').addClass('nomatch');
+        }
+
     }).focus(function() 
     {
         $('#pswd_info').show();
@@ -51,21 +61,27 @@ $(document).ready(function()
     });
 
     
+    
 });
 
 
+$(document).ready(function() 
+{
+    $('input[id=confirm_password]').keyup(function() 
+    {
+        // set password variable
+        var confirm = $(this).val();
 
-var check = function() {
-    if (document.getElementById('password').value == document.getElementById('confirm_password').value) 
-    {
-        document.getElementById('message').style.color = 'green';
-        document.getElementById('message').innerHTML = 'matching';
-        return true;
-    } 
-    else 
-    {
-        document.getElementById('message').style.color = 'red';
-        document.getElementById('message').innerHTML = 'not matching';
-        return false;
-    }
-}
+        if (confirm == document.getElementById('password').value)
+        {
+            $('#confirm_password').removeClass('nomatch').addClass('match');
+            document.getElementById('register').disabled = false;
+        }
+        else
+        {
+            $('#confirm_password').removeClass('match').addClass('nomatch');
+            document.getElementById('register').disabled = true;
+        }
+    });
+    
+});

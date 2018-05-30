@@ -1,6 +1,6 @@
 body 
 {
-    background: url(../images/Background.jpg);
+    background: url(images/Background.jpg);
     font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans serif;
     font-size:16px;
     height: device-height;
@@ -164,7 +164,7 @@ button:active
 
 .invalid 
 {
-    background:url(../images/icons/cross.png) no-repeat 0 50%;
+    background:url(images/icons/cross.png) no-repeat 0 50%;
     padding-left:22px;
     line-height:24px;
     color:#ec3f41;
@@ -172,8 +172,20 @@ button:active
 
 .valid 
 {
-    background:url(../images/icons/tick.png) no-repeat 0 50%;
+    background:url(images/icons/tick.png) no-repeat 0 50%;
     padding-left:22px;
     line-height:24px;
     color:#3a7d34;
+}
+
+.nomatch
+{
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.match
+{
+    border: 1px solid green;
+    border-radius: 5px;
 }

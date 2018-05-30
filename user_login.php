@@ -29,7 +29,7 @@ if (isset($_POST['username']))
 
     $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
 
-    $query = $conn->prepare("SELECT password FROM speler WHERE username LIKE '".$username."'");
+    $query = $conn->prepare("SELECT password, id FROM speler WHERE username LIKE '".$username."'");
 
     $query->execute();
 
@@ -40,7 +40,7 @@ if (isset($_POST['username']))
     if ($verify)
     {
         session_start();
-        $_SESSION['user'] = $username;
+        $_SESSION['id'] = $result['id'];
     }
     else
     {
@@ -48,7 +48,8 @@ if (isset($_POST['username']))
     }
 
     var_dump($verify);
-    if (isset($_SESSION['user'])
+
+    if (isset($_SESSION['id']))
     {
         var_dump($_SESSION);
     }

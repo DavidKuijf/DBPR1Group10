@@ -36,7 +36,7 @@
             </li>
             <li>
                 <span id="message"></span><br><br>
-                <button type="submit">Register</button>
+                <button type="submit" id="register">Register</button>
             </li>
         </ul>
     </form>
