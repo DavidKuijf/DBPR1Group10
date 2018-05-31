@@ -5,24 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>User Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="default.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="registerlogin.css" />    
+    <script src="jquery-3.3.1.min.js"></script>
     <script src="userregistration.js"></script>
 </head>
-<body class="bgimg">
-    <form method="post" class="center" name="registerform" id="registerform">
-        <div class="formfont"><label for="firstname">First Name</label></div>
-        <input type="text" name="firstname" required><br>
-        <div class="formfont"><label for="lastname">Last Name</label></div>
-        <input type="text" name="lastname" required><br>
-        <div class="formfont"><label for="username">Username</label></div>
-        <input type="text" name="username" required><br>
-        <div class="formfont"><label for="password">Password</label></div>
-        <input type="password" name="password" id="password" onkeyup="check();" required><br>
-        <div class="formfont"><label for="confirm_password">Confirm Password</label></div>
-        <input type="password" name="confirm_password" id="confirm_password" onkeyup="check();" required><br>
-        <span id="message"></span><br><br>
-        <input type="submit" value="Register">
+<body>
+<div id="container">
+    <h1>User Registration</h1>
+    <form method="post"  name="registerform" id="registerform">
+        <ul>
+            <li>
+                <label for="firstname">First Name</label>
+                <span><input type="text" name="firstname" required></span><br>
+            </li>
+            <li>
+                <label for="lastname">Last Name</label>
+                <span><input type="text" name="lastname" required></span><br>
+            </li>
+            <li>
+                <label for="username">Username</label>
+                <span><input type="text" name="username" required></span><br>
+            </li>
+            <li>
+                <label for="password">Password</label>
+                <span><input type="password" name="password" id="password" onkeyup="check();" required></span><br>
+            </li>
+            <li>
+                <label for="confirm_password">Confirm Password</label>
+                <span><input type="password" name="confirm_password" id="confirm_password" onkeyup="check();" required></span><br>
+            </li>
+            <li>
+                <span id="message"></span><br><br>
+                <button type="submit" id="register">Register</button>
+            </li>
+        </ul>
     </form>
+
+    <div id="pswd_info">
+        <h4>Password must meet the following requirements:</h4>
+        <ul>
+            <li id="letter" class="invalid">At least <strong>one letter</strong></li>
+            <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
+            <li id="number" class="invalid">At least <strong>one number</strong></li>
+            <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>
 
