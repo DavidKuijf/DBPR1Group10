@@ -36,53 +36,18 @@
             }
         </script>
         
-        <?php
-            function addrecord(){
-                $servername = "localhost";
-                $username = "projecttest";
-                $password = "test";
-                $dbname = "test";
-                $name = "testname";
-                $email = "john@REEEEE.com";
-
-                // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                } 
-
-                $sql = "INSERT INTO users (name, email)
-                VALUES ($name, $    email)";
-
-                if ($conn->query($sql) === TRUE) {
-                    echo "New record created successfully";
-                } else {
-                    echo "Error: " . $sql . "<br>" . $conn->error;
-                }
-                $conn->close();
-            }
-           
-            ?>
+        
 
         
         <div id="centerscreen" class="center">
             <div class="fade-in"> 
                 <h1>MENU</h1>
-<<<<<<< HEAD
                 <div id="menu" class="menu">
                     <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
                     <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
                     <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
                     <a href="testpage.php" class"menubutton"><img src="/Images/bats.jpg"></a>
 
-=======
-                <div class="menu">
-                    <a href="testpage.php" class"menubutton"><img src="Images/bats.jpg"></a>
-                    <a href="testpage.php" class"menubutton"><img src="Images/bats.jpg"></a>
-                    <a href="testpage.php" class"menubutton"><img src="Images/bats.jpg"></a>
-                    <a href="testpage.php" class"menubutton"><img src="Images/bats.jpg"></a>
->>>>>>> 7187001b18dc9266b44e9e93c223fcfa720d1488
                 </div>
             </div>
         </div>
