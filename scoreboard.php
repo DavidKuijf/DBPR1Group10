@@ -17,8 +17,8 @@
             <text id="pointsteamone">0</text>
             <text id="pointsteamtwo">0</text><br>
             <button type="button" onclick="addPointOne()">Point</button> 
-            <button type="button" onclick="subPointOne()">Point Back</button> 
-            <button type="button" onclick="subPointTwo()">Point Back</button> 
+            <button type="button" onclick="subPointOne()">Deduct Point</button> 
+            <button type="button" onclick="subPointTwo()">Deduct Point</button> 
             <button type="button" onclick="addPointTwo()">Point</button><br><br>
             <button type="button" onclick="resetGame()">Reset</button> 
         </div>
