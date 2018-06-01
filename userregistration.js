@@ -9,47 +9,57 @@ $(document).ready(function()
         if (password.length < 8) 
         {
             $('#length').removeClass('valid').addClass('invalid');
+            document.getElementById('register').disabled = true;
         } 
         else 
         {
             $('#length').removeClass('invalid').addClass('valid');
+            document.getElementById('register').disabled = false;
         }
 
         //validate letter
         if (password.match(/[A-z]/)) {
             $('#letter').removeClass('invalid').addClass('valid');
+            document.getElementById('register').disabled = true;
         } 
         else 
         {
             $('#letter').removeClass('valid').addClass('invalid');
+            document.getElementById('register').disabled = false;
         }
 
         //validate capital letter
         if (password.match(/[A-Z]/)) {
             $('#capital').removeClass('invalid').addClass('valid');
+            document.getElementById('register').disabled = true;
         } 
         else 
         {
             $('#capital').removeClass('valid').addClass('invalid');
+            document.getElementById('register').disabled = false;
         }
 
         //validate number
         if (password.match(/\d/)) 
         {
             $('#number').removeClass('invalid').addClass('valid');
+            document.getElementById('register').disabled = true;
         } 
         else 
         {
             $('#number').removeClass('valid').addClass('invalid');
+            document.getElementById('register').disabled = false;
         }
 
         if (password == document.getElementById('confirm_password').value)
         {
             $('#confirm_password').removeClass('nomatch').addClass('match');
+            document.getElementById('register').disabled = false;
         }
         else
         {
             $('#confirm_password').removeClass('match').addClass('nomatch');
+            document.getElementById('register').disabled = true;
         }
 
     }).focus(function() 
