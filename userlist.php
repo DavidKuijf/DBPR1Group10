@@ -1,60 +1,70 @@
 <!DOCTYPE html>
-
+<html lang="">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
- 
-  <style>
-  #feedback { font-size: 1.4em; }
-  #selectable .ui-selecting { background: #FECA40; }
-  #selectable .ui-selected { background: #F39814; color: white; }
-  #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#selectable" ).selectable({
-      stop: function() {
-        var result = $( "#select-result" ).empty();
-        $( ".ui-selected", this ).each(function() {
-          var index = $( "#selectable li" ).index( this );
-          result.append( " #" + ( index + 1 ) );
-        });
-      }
-    });
-  } );
-  </script>
+  <meta name="description" content="Select players for a tournament">
+  <meta name="author" content="D Kuijf">
+  <title>Kies uw spelers</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/multi-select.css">
+  <link rel="stylesheet" type="text/css" href="default.css">
 </head>
-<body>
- 
-<p id="feedback">
-<span>You've selected:</span> <span id="select-result">none</span>.
-</p>
- 
-<ol id="selectable">
-<?php
+
+<body class="bgimg">
+  <!-- start -->
+  <div id="userListMenu">
+    <ul>
+      <li><a href='#' id='select-all'>select all</a>
+      <li><a href='#' id='deselect-all'>deselect all</a>
+      <li><a href='#' id='ok'>ok</a>
+      <li><a href='#' id='stop'>stop</a>
+    </ul>
+  </div
+  <div>
+
+  <select id='selectableUserList'  style="text-shadow:none" multiple='multiple'>
+
+    <?php
         $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
         $query = $conn->prepare("SELECT id,roepnaam,achternaam FROM speler");
         $query->execute();
-        $availablelist = array([]);
+        
         
         while($result = $query->fetch()){
             
-            echo "<li>". 
-            $result['id']. " ".
-            $result['roepnaam']. " ".
-            $result['achternaam'].
+            echo "<option value=".$result['id'].">" .$result['id']." ". $result['roepnaam']." ". $result['achternaam']."</option>";
             
-            "</li>";
-            array_push($availablelist,$result['id']);
         }
     
-    ?>
-</ol>
- 
- 
+      ?>
+    </select>
+  </div>
+  <!-- ends -->
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+  <script src="../js/jquery.multi-select.js"></script>
+  <script type="text/javascript">
+  // run callbacks
+    $('#selectableUserList').multiSelect({
+      selectableHeader: "<div class='custom-header'>Beschikbare spelers</div>",
+      selectionHeader: "<div class='custom-header'>Gekozen spelers</div>",
+        
+    });
+    $('#select-all').click(function(){
+      $('#selectableUserList').multiSelect('select_all');
+      return false;
+    });
+    $('#deselect-all').click(function(){
+      $('#selectableUserList').multiSelect('deselect_all');
+      return false;
+    });  
+  </script>
 </body>
+
+</html>
+
