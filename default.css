@@ -12,15 +12,25 @@ h1 html {
   display: inline-block;
 }
 
-.userlistbutton{
-  background-color: #4CAF50; /* Green */
-  border: none;
+.optionMenu{
+  list-style-type: none;
+  margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+.optionMenuContainer{
+  float: left;
+}
+.optionMenuButton{
+  display: block;
   color: white;
-  padding: 15px 32px;
   text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+}
+.optionMenuButton:hover{
+  background-color: #111;
 }
 
 
@@ -47,7 +57,7 @@ h1 html {
     height:400;
 }
 
-.menubutton{
+.menuButton{
     
     display:inline-block;
     width:200;

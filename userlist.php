@@ -15,14 +15,15 @@
 
 <body class="bgimg">
   <!-- start -->
-  <div id="userListMenu">
-    <ul>
-      <li><a href='#' id='select-all'>select all</a>
-      <li><a href='#' id='deselect-all'>deselect all</a>
-      <li><a href='#' id='ok'>ok</a>
-      <li><a href='#' id='stop'>stop</a>
+
+    <ul class="optionMenu">
+
+      <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='select-all' >alle spelers</a>
+      <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='deselect-all'>geen spelers</a>
+      <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='ok'>ok</a>
+      <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='stop'>stop</a>
     </ul>
-  </div
+
   <div>
 
   <select id='selectableUserList'  style="text-shadow:none" multiple='multiple'>
@@ -50,11 +51,17 @@
   <script src="../js/jquery.multi-select.js"></script>
   <script type="text/javascript">
   // run callbacks
+    var selected = [];
     $('#selectableUserList').multiSelect({
       selectableHeader: "<div class='custom-header'>Beschikbare spelers</div>",
       selectionHeader: "<div class='custom-header'>Gekozen spelers</div>",
-        
+      
+      afterSelect: function(values){
+        selected.push(values);
+      }
     });
+
+    
     $('#select-all').click(function(){
       $('#selectableUserList').multiSelect('select_all');
       return false;
@@ -62,7 +69,17 @@
     $('#deselect-all').click(function(){
       $('#selectableUserList').multiSelect('deselect_all');
       return false;
-    });  
+    }); 
+    $('#ok').click(function(){
+      $.ajax({
+       type: "GET",
+       url: "testpage.php",
+       data: {selected : selected},
+       success: function(){
+            alert("OK");
+        }     
+      });
+    })
   </script>
 </body>
 
