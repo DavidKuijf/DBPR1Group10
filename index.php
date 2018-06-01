@@ -43,7 +43,7 @@
             <div class="fade-in"> 
                 
                 <div id="menu" class="menu">
-                    <a href="testpage.php" class"menuButton"><img src="/Images/vs.png" class='reframe'></a>
+                    <a href="scoreboard.php" class"menuButton"><img src="/Images/vs.png" class='reframe'></a>
                     <a href="testpage.php" class"menuButton"><img src="/Images/podium.png" class='reframe'></a>
                     <a href="userlist.php" class"menuButton"><img src="/Images/tournament.png" class='reframe'></a>
                     <a href="testpage.php" class"menuButton"><img src="/Images/gears.png" class='reframe'></a>
