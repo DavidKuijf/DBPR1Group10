@@ -24,7 +24,7 @@
       <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='stop'>stop</a>
     </ul>
 
-  <div>
+  <div id='hideable'>
 
   <select id='selectableUserList'  style="text-shadow:none" multiple='multiple'>
 
@@ -42,6 +42,8 @@
     
       ?>
     </select>
+  </div>
+  <div id = 'fillable'>
   </div>
   <!-- ends -->
   <!-- jQuery -->
@@ -71,12 +73,15 @@
       return false;
     }); 
     $('#ok').click(function(){
+    
+      $('#hideable').hide();
       $.ajax({
        type: "GET",
        url: "testpage.php",
        data: {selected : selected},
-       success: function(){
+       success: function(data){
             alert("OK");
+            $('#fillable').html(data);
         }     
       });
     })
