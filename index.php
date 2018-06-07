@@ -5,31 +5,14 @@
     
     <head >
         <meta name="robots" content="noindex">
-        <link rel="stylesheet" type="text/css" href="default.css">
+        <link rel="stylesheet" type="text/css" href="css/default.css">
        
         
     </head>
         
    
-    <body class="bgimg">
-
-
-    <script>
-       $.ajax({
-            url: 'sessioncheck.php',
-            type: 'POST',
-            success: function(result) {
-                if (result == 'success'){
-                alert('woohoo');
-                }else{
-                alert('waahaa');
-            }
-        }
-    });
-    </script>
-        
-        
-
+    <body id='body' class="bgimg">
+        <div id="overlay"</div>
         
         <div id="centerscreen" class="center">
             <div class="fade-in"> 
@@ -44,7 +27,25 @@
             </div>
         </div>
     </body>
-
-    
+    <!--including jquery, bootstrapjs and the multi select libraries-->
+    <script src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+    <script src="jquery.multi-select.js"></script>
+        <script>
+        
+        $.ajax({
+            url: 'sessioncheck.php',
+            type: 'POST',
+            data: {username:"reee"},
+            success: function(result) {
+                if(result == 'success'){
+                    
+                }
+                else{
+                    $
+                }
+            }
+        });   
+    </script>
     
 </html> 
