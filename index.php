@@ -5,14 +5,12 @@
     
     <head >
         <meta name="robots" content="noindex">
-        <link rel="stylesheet" type="text/css" href="css/default.css">
-       
-        
+        <link rel="stylesheet" type="text/css" href="css/default.css">  
     </head>
         
-   
+    
     <body id='body' class="bgimg">
-        <div id="overlay"</div>
+        
         
         <div id="centerscreen" class="center">
             <div class="fade-in"> 
@@ -26,6 +24,8 @@
                 </div>
             </div>
         </div>
+
+    <div id='overlay' class='overlay'</div>
     </body>
     <!--including jquery, bootstrapjs and the multi select libraries-->
     <script src="js/jquery.min.js"></script>
