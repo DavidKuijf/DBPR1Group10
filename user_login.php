@@ -5,18 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>User Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="default.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="registerlogin.css" />
     <script src="userlogin.js"></script>
 </head>
 <body class="bgimg">
+<div id="container">
+    <h1>Login</h1>
     <form method="post" class="center" name="loginform" id="loginform">
-        <div class="formfont"><label for="username">Username</label></div>
-        <input type="text" name="username" required><br>
-        <div class="formfont"><label for="password">Password</label></div>
-        <input type="password" name="password" id="password" required><br>
-        <span name="message" id="message"></span><br>
-        <input type="submit" value="Log in">
+        <ul>
+            <li>
+                <label for="username">Username</label>
+                <span><input type="text" name="username" required></span><br>
+            </li>
+            <li>
+                <label for="password">Password</label>
+                <span><input type="password" name="password" id="password" required></span><br>
+            <li>
+                <button name="login" id="login">Log In</button>
+            </li>
     </form>
+</div>
 </body>
 </html>
 

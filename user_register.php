@@ -6,13 +6,13 @@
     <title>User Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="registerlogin.css" />    
-    <script src="jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="userregistration.js"></script>
 </head>
 <body>
 <div id="container">
     <h1>User Registration</h1>
-    <form method="post"  name="registerform" id="registerform">
+    <form method="post" name="registerform" id="registerform">
         <ul>
             <li>
                 <label for="firstname">First Name</label>
