@@ -10,17 +10,25 @@
     </head>
     <body class="bgimg">
         <div class="center">
-            <text>Sets</text><br>
-            <text id="setsteamone">0</text>
-            <text id="setsteamtwo">0</text><br>
-            <text>Score</text><br>
-            <text id="pointsteamone">0</text>
-            <text id="pointsteamtwo">0</text><br>
-            <button type="button" onclick="addPointOne()">Add Point</button> 
-            <button type="button" onclick="subPointOne()">Deduct Point</button> 
-            <button type="button" onclick="subPointTwo()">Deduct Point</button> 
-            <button type="button" onclick="addPointTwo()">Add Point</button><br><br>
-            <button type="button" onclick="resetGame()">Reset</button> 
+            <div id="container">
+                <div id="header">
+                    <h1>Quick Match</h1>
+                </div>
+                <div id="scorecontainer"> 
+                    <div id="setcontainer">
+                        <h2>sets</h2>
+                        <text id="setsteamone">0</text>
+                        <text id="setsteamtwo">0</text>
+                    </div>
+                    <text id="pointsteamone">0</text>
+                    <text id="pointsteamtwo">0</text>
+                    <button id="addpointone" type="button" onclick="addPointOne()">+</button> 
+                    <button id="subpointone" type="button" onclick="subPointOne()">-</button> 
+                    <button id="subpointtwo" type="button" onclick="subPointTwo()">-</button> 
+                    <button id="addpointtwo" type="button" onclick="addPointTwo()">+</button>
+                    <button id="resetgame" type="button" onclick="resetGame()">Reset</button>
+                </div>
+            </div>
         </div>
     </body>
 </html>
