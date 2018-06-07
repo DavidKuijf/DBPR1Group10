@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>User Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="registerlogin.css" />    
-    <script src="jquery-3.3.1.min.js"></script>
-    <script src="userregistration.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css" />    
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/userregistration.js"></script>
 </head>
 <body>
 <div id="container">

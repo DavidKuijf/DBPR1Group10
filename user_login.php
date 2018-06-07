@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>User Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="default.css" />
-    <script src="userlogin.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/default.css" />
+    <script src="js/userlogin.js"></script>
 </head>
 <body class="bgimg">
     <form method="post" class="center" name="loginform" id="loginform">
@@ -41,6 +41,7 @@ if (isset($_POST['username']))
     {
         session_start();
         $_SESSION['id'] = $result['id'];
+        
     }
     else
     {

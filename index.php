@@ -18,7 +18,7 @@
                 <div id="menu" class="menu">
                     <a href="scoreboard.php" class"menuButton"><img src="Images/vs.png" class='reframe'></a>
                     <a href="testpage.php" class"menuButton"><img src="Images/podium.png" class='reframe'></a>
-                    <a href="userlist.php" class"menuButton"><img src="Images/tournament.png" class='reframe'></a>
+                    <a href="create_tournament.php" class"menuButton"><img src="Images/tournament.png" class='reframe'></a>
                     <a href="testpage.php" class"menuButton"><img src="Images/gears.png" class='reframe'></a>
 
                 </div>
@@ -30,19 +30,17 @@
     <!--including jquery, bootstrapjs and the multi select libraries-->
     <script src="js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
-    <script src="jquery.multi-select.js"></script>
-        <script>
-        
-        $.ajax({
+    <script>
+            $.ajax({
             url: 'sessioncheck.php',
             type: 'POST',
-            data: {username:"reee"},
             success: function(result) {
                 if(result == 'success'){
-                    
+                    $('#overlay').css({'display' : 'none'});
                 }
                 else{
-                    $
+                    $('#overlay').load('user_login.php');
+                    $('#overlay').css({'display' : 'Block'});
                 }
             }
         });   
