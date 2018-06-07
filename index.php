@@ -40,7 +40,7 @@
                 }
                 else{
                     $('#overlay').load('user_login.php');
-                    $('#overlay').css({'display' : 'Block'});
+                    //$('#overlay').css({'display' : 'Block'});
                 }
             }
         });   
