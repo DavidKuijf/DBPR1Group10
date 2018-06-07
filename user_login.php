@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +51,6 @@ if (isset($_POST['username']))
 
     if ($verify)
     {
-        session_start();
         $_SESSION['id'] = $result['id'];
     }
     else
