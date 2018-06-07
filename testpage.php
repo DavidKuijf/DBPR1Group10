@@ -16,9 +16,11 @@
     </head>
     <body class="bgimg">
         <?php
-
-        var_dump($_GET);
-
+        if (isset($_SESSION['id']))
+        {
+            var_dump($_SESSION['id']);
+            
+        }
         ?>
        
 
