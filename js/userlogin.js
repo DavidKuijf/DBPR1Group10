@@ -1,6 +1,6 @@
 var login_failed = function() 
 {
-    document.getElementById('message').innerHTML = 'Incorrect username and/or password.';
+    $('#message').html('Incorrect username and/or password.');
 }
 
 $('#loginform').submit(function(event){
@@ -9,7 +9,14 @@ $('#loginform').submit(function(event){
     $.ajax({
         type: 'POST',
         url:'login.php',
-        data:formData
+        data:formData,
+        success: function(result) {
+            if(result == 'success'){
+                $('#overlay').css({'display' : 'none'});
+            }
+            if (result == 'fail'){
+                $('message').html('incorrect username an/or password');
+            }
+        }
     })
-    $('#overlay').css({'display' : 'none'});
 });

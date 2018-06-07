@@ -27,7 +27,7 @@
 
     <div id='overlay' class='overlay'</div>
     </body>
-    <!--including jquery, bootstrapjs and the multi select libraries-->
+    <!--including jquery-->
     <script src="js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
     <script>

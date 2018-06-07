@@ -15,22 +15,17 @@ if (isset($_POST['username']))
 
     $verify = password_verify($password, $result['password']);
 
+
     if ($verify)
     {
         session_start();
         $_SESSION['id'] = $result['id'];
+        echo 'success';
         
     }
     else
     {
-        echo '<script type="text/javascript">document.getElementById("message").innerHTML = "Incorrect username and/or password.";</script>';
-    }
-
-    var_dump($verify);
-
-    if (isset($_SESSION['id']))
-    {
-        var_dump($_SESSION);
+        echo 'fail';
     }
 }
 
