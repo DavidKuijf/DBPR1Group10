@@ -43,7 +43,8 @@
                     $('#overlay').css({'display' : 'Block'});
                 }
             }
-        });   
+        });  
+        
     </script>
     
 </html> 

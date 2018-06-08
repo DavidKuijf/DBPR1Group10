@@ -1,12 +1,19 @@
 //For sending them off later
+
 var selected = [];
+
 $('#selectableUserList').multiSelect({
     selectableHeader: "<div class='custom-header'>Beschikbare spelers</div>",
     selectionHeader: "<div class='custom-header'>Gekozen spelers</div>",
-      
+    
     afterSelect: function(values){
       selected.push(values);
+      if (selected.length==parseInt(maxselected)){
+        $('#selectableUserList').attr('disabled','disabled');
+        $('#selectableUserList').multiSelect('refresh');
+      }
     }
+    
   });
 
     
@@ -32,3 +39,5 @@ $('#selectableUserList').multiSelect({
       }     
     });
     })
+
+  

@@ -41,11 +41,11 @@ if (isset($_POST['username']))
     {
         session_start();
         $_SESSION['id'] = $result['id'];
-        echo 'success';
+        
     }
     else
     {
-        echo 'fail';
+        echo '<script type="text/javascript">document.getElementById("message").innerHTML = "Incorrect username and/or password.";</script>';
     }
 
     var_dump($verify);

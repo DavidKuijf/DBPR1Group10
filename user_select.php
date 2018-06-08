@@ -22,11 +22,12 @@
       <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='deselect-all'>geen spelers</a>
       <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='ok'>ok</a>
       <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='stop'>stop</a>
+
     </ul>
 
   <div id='hideable'>
 
-  <select id='selectableUserList'  style="text-shadow:none" multiple='multiple'>
+  <select id='selectableUserList' style="text-shadow:none" multiple='multiple'>
 
     <?php
         $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
@@ -49,6 +50,11 @@
     <script src="js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
     <script src="js/jquery.multi-select.js"></script>
+    <script src='js/user_select.js'></script>
+    <script>
+    var maxselected = '<?php echo $_POST["amountofplayers"]?>;'
+    console.log(maxselected);
+    </script>
 
 </html>
 
