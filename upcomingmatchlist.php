@@ -33,7 +33,7 @@
                         "</div>".
 
                         "<div class='matchblockversus'>".
-                        "< <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>VS</a>".
+                        "<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>VS</a>".
                         "</div>".
 
                         "<div class='matchblockteam2'>".
