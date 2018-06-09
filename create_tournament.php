@@ -17,7 +17,7 @@
         <ul>
             <li>
                 <label for="amountofplayers">Aantal spelers</label>
-                <span><input type="number" name="amountofplayers" required min='6' max='10'></span><br>
+                <span><input type="number" name="amountofplayers" value='6' required min='6' max='10'></span><br>
             </li>
             <li>
                 <label for="startdatum">Startdatum</label>

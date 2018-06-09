@@ -24,6 +24,8 @@ $('#selectableUserList').multiSelect({
 
   $('#deselect-all').click(function(){
     $('#selectableUserList').multiSelect('deselect_all');
+    $('#selectableUserList').removeAttr('disabled','disabled');
+    $('#selectableUserList').multiSelect('refresh');
     return false;
   }); 
     
