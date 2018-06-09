@@ -24,18 +24,38 @@
                 //." ".$result['score1']." ".$result['score2']
                 echo 
                     "<div class='upcomingmatchblock'>" .
-                        "<div class='matchblockheader'>".
-                            "Wedstrijd nummer: ".$result['nummer']." speler ".$result['speler1']." en ".$result['speler2']." vs  speler ".$result['speler3']." en  ".$result['speler4']." bij tafel: ".$result['tafel']
-                        ."</div>".
                         "<div class='matchblocknumber'>".
-                            $toernooinr.
+                            $result['nummer'].
                         "</div>".
-                        "<div class='matchblockinput'>".
+
+                        "<div class='matchblockteam1'>".
+                            "speler ".$result['speler1']." en ".$result['speler2'].
+                        "</div>".
+
+                        "<div class='matchblockversus'>".
+                        "< <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>VS</a>".
+                        "</div>".
+
+                        "<div class='matchblockteam2'>".
+                        "speler ".$result['speler3']." en  ".$result['speler4'].
+                        "</div>".
+
+                        "<div class='matchblocktime'>".
+                            "   ".
+                        "</div>".
+
+                        "<div class='matchblockinput1'>".
                             "<input class='matchinput' type='number' name='score1'>".
+                        "</div>".
+
+                        "<div class='matchblockinput2'>".
                             "<input class='matchinput' type='number' name='score2'>".
                         "</div>".
-                        "<div class='matchbutton'>
-                        </div>".
+                        
+                        "<div class='matchbutton'>".
+                            "Beëindig".
+                        "</div>".
+                        
                         "<div class='matchblockfooter'>
                         </div>".
                     "</div>"

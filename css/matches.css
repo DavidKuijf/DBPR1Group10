@@ -1,37 +1,90 @@
 .upcomingmatchblock{
+    
     margin-left : 10vw;
     margin-right: 10vw;
     width : 80vw;
     border : 2px solid black;
-    padding: 10px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background: rgba(197, 202, 202, 0.446);
     border-radius: 25px;
     display: grid;
     grid-template-areas:
-    'team1 versus team2 header header header'
-    'number input input input button button'
-    'number footer footer footer footer footer';
-    grid-gap: 10px;
-
-}
-.matchblockheader{
-    grid-area: header;
+    'number team1 versus team2 time'
+    'number input1 versus  input2 button'
+    'number footer footer footer footer';
     
+    grid-gap: 0px;
+
 }
 
-.matchblockinput{
-    grid-area:input;
+.matchblockteam1{
+    background: #ff6666;
+    grid-area: team1;
+    width: 100%;
+    border-radius: 5px;
+    align-content: center;
+    text-align: center;
+}
+.matchblockversus{
+    grid-area: versus;
+    align-content: center;
+    text-align: center;
+   
+    font-size: 50;
+    color: white;
+    background: black;
+    border-radius : 50px;
+}
+.matchblockteam2{
+    background: #6699ff;
+    grid-area: team2;
+    width: 100%;
+    border-radius: 5px;
+    align-content: center;
+    text-align: center;
+}
+.matchblocktime{
+    grid-area: time;
+    align-content: center;
+    text-align: center;
+}
+
+.space{
+    grid-area: space;
+}
+
+
+.matchblockinput1{
+    grid-area:input1;
+    background: #ff6666;
+    align-content: center;
+    border-radius: 5px;
+    align-content: center;
+    text-align: center;
+
+}
+
+.matchblockinput2{
+    grid-area:input2;
+    background: #6699ff;
+    border-radius: 5px;
+    align-content: center;
+    text-align: center;
 
 }
 
 .matchblockfooter{
     grid-area: footer;
+    align-content: center;
+    text-align: center;
 }
 
 .matchblocknumber{
-    text-align: center;
     grid-area: number;
-    width: 40%;
+    text-align: center;
+    
     font-size: 50;
     color: white;
     background: black;
@@ -41,9 +94,10 @@
 .matchbutton{
     grid-area: button;
     background-color: white;
+    
     border: none;
     color: black;
-    padding:15px 32px;
+    padding:8px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -51,7 +105,7 @@
 }
 
 .matchinput{
-    width:50%;
+    
     height: 100%;
     border:3px black;
     border-radius: 5px;
