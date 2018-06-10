@@ -2,7 +2,7 @@
     
     margin-left : 10vw;
     margin-right: 10vw;
-    width : 80vw;
+    
     border : 2px solid black;
     padding: 30px;
     padding-top: 10px;
@@ -13,7 +13,7 @@
     grid-template-areas:
     'number team1 versus team2 time'
     'number input1 versus  input2 button'
-    'number footer footer footer footer';
+    'number . versus footer footer';
     
     grid-gap: 0px;
 
@@ -25,14 +25,17 @@ a{
 }
 
 .matchblockteam1{
+    font-family: 'Anton', sans-serif;
     background: #ff6666;
     grid-area: team1;
     width: 100%;
-    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     align-content: center;
     text-align: center;
 }
 .matchblockversus{
+    font-family: 'Anton', sans-serif;
     grid-area: versus;
     align-content: center;
     text-align: center;
@@ -43,17 +46,24 @@ a{
     border-radius : 50px;
 }
 .matchblockteam2{
+    font-family: 'Anton', sans-serif;
     background: #6699ff;
     grid-area: team2;
     width: 100%;
-    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     align-content: center;
     text-align: center;
 }
 .matchblocktime{
+    font-family: 'Anton', sans-serif;
     grid-area: time;
+    color: white;
     align-content: center;
     text-align: center;
+    background: black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 .space{
@@ -62,31 +72,37 @@ a{
 
 
 .matchblockinput1{
+    font-family: 'Anton', sans-serif;
     grid-area:input1;
     background: #ff6666;
     align-content: center;
-    border-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
     align-content: center;
     text-align: center;
 
 }
 
 .matchblockinput2{
+    font-family: 'Anton', sans-serif;
     grid-area:input2;
     background: #6699ff;
-    border-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
     align-content: center;
     text-align: center;
 
 }
 
 .matchblockfooter{
+    font-family: 'Anton', sans-serif;
     grid-area: footer;
     align-content: center;
     text-align: center;
 }
 
 .matchblocknumber{
+    font-family: 'Anton', sans-serif;
     grid-area: number;
     text-align: center;
     
@@ -94,11 +110,14 @@ a{
     color: white;
     background: black;
     border-radius : 50px;
+    width:200px;
+    
 }
 
 .matchbutton{
+    font-family: 'Anton', sans-serif;
     grid-area: button;
-    background-color: white;
+    background-color: black;
     
     border: none;
     color: black;
@@ -106,14 +125,36 @@ a{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .matchinput{
-    
+    font-family: 'Anton', sans-serif;
     height: 100%;
     border:3px black;
-    border-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
     font-size: 20;
     
 }
+
+input{
+    text-align:center;
+ }
+
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }
