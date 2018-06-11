@@ -11,9 +11,9 @@
     border-radius: 25px;
     display: grid;
     grid-template-areas:
-    'number team1 versus team2 time'
+    'number team1  versus  team2  time'
     'number input1 versus  input2 button'
-    'number . versus footer footer';
+    'number .      versus  footer footer';
     
     grid-gap: 0px;
 

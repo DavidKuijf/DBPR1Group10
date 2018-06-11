@@ -68,7 +68,7 @@
                         "</div>".
                         
                         "<div class='matchbutton'>".
-                            "<a href='#' id='matchbutton'>Beëindig</a>".
+                            "<a href='#' id='matchbutton'  data-value='".$result1['nummer']."'>Beëindig</a>".
                         "</div>".
                         
                         "<div class='matchblockfooter'>".

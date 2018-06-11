@@ -4,12 +4,13 @@ $('a').click(function(){
     var score1 = $('#score1input'+matchid).val();
     var score2 = $('#score2input'+matchid).val();
     var time = $('#timeinput' +matchid).val();
-    console.log(matchid);
+
+   /* console.log(matchid);
     console.log(score1);
     console.log(score2);
     console.log(time);
-    console.log(tournamentnr);
-
+    console.log(tournamentnr);*/
+    $(this).parents('div').fadeOut();
     $.ajax({
       type: "GET",
       url: "write_match.php",
