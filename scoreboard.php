@@ -6,7 +6,7 @@
         <meta name="robots" content="noindex">
         <link rel="stylesheet" type="text/css" href="scoreboard.css">
         <link rel"animationsheet" type="text/css" hraf="animation.css">
-        <script src="scoreboard.js"></script>
+        <script src="js/scoreboard.js"></script>
     </head>
     <body class="bgimg">
         <div class="center">
