@@ -10,7 +10,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/multi-select.css">
-  <link rel="stylesheet" type="text/css" href="default.css">
+  <link rel="stylesheet" type="text/css" href="css/default.css">
 </head>
 
 <body class="bgimg">
@@ -24,7 +24,7 @@
       <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='stop'>stop</a>
     </ul>
 
-  <div>
+  <div id='hideable'>
 
   <select id='selectableUserList'  style="text-shadow:none" multiple='multiple'>
 
@@ -43,45 +43,12 @@
       ?>
     </select>
   </div>
-  <!-- ends -->
-  <!-- jQuery -->
-  <script src="js/jquery.min.js"></script>
-  <!-- Bootstrap JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
-  <script src="../js/jquery.multi-select.js"></script>
-  <script type="text/javascript">
-  // run callbacks
-    var selected = [];
-    $('#selectableUserList').multiSelect({
-      selectableHeader: "<div class='custom-header'>Beschikbare spelers</div>",
-      selectionHeader: "<div class='custom-header'>Gekozen spelers</div>",
-      
-      afterSelect: function(values){
-        selected.push(values);
-      }
-    });
-
-    
-    $('#select-all').click(function(){
-      $('#selectableUserList').multiSelect('select_all');
-      return false;
-    });
-    $('#deselect-all').click(function(){
-      $('#selectableUserList').multiSelect('deselect_all');
-      return false;
-    }); 
-    $('#ok').click(function(){
-      $.ajax({
-       type: "GET",
-       url: "testpage.php",
-       data: {selected : selected},
-       success: function(){
-            alert("OK");
-        }     
-      });
-    })
-  </script>
+  
 </body>
+<!--including jquery, bootstrapjs and the multi select libraries-->
+    <script src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+    <script src="js/jquery.multi-select.js"></script>
 
 </html>
 

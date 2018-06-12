@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>User Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="registerlogin.css" />
-    <script src="userlogin.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css" />
+    <script src="js/userlogin.js"></script>
 </head>
 <body class="bgimg">
 <div id="container">
@@ -52,6 +52,9 @@ if (isset($_POST['username']))
     if ($verify)
     {
         $_SESSION['id'] = $result['id'];
+
+        header("Location: user.php");
+        
     }
     else
     {
