@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="">
+<html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,20 +13,21 @@
   <link rel="stylesheet" type="text/css" href="css/default.css">
 </head>
 
-<body class="bgimg">
+<body>
   <!-- start -->
 
     <ul class="optionMenu">
 
-      <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='select-all' >alle spelers</a>
+      
       <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='deselect-all'>geen spelers</a>
       <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='ok'>ok</a>
       <li class="optionMenuContainer"><a class='optionMenuButton' href='#' id='stop'>stop</a>
+
     </ul>
 
   <div id='hideable'>
 
-  <select id='selectableUserList'  style="text-shadow:none" multiple='multiple'>
+  <select id='selectableUserList' style='height:10vh' multiple='multiple' >
 
     <?php
         $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
@@ -39,16 +40,19 @@
             echo "<option value=".$result['id'].">" .$result['id']." ". $result['roepnaam']." ". $result['achternaam']."</option>";
             
         }
-    
+        
       ?>
     </select>
   </div>
   
 </body>
-<!--including jquery, bootstrapjs and the multi select libraries-->
+    <script>
+    var maxselected = '<?php echo $_POST["amountofplayers"]?>;'
+    </script>
     <script src="js/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
-    <script src="js/jquery.multi-select.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+  <script src="js/jquery.multi-select.js"></script>
+  <script src='js/create_tournament.js'></script> 
 
 </html>
 

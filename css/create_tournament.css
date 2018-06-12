@@ -1,0 +1,38 @@
+.form{
+    border:5px solid white;
+    background: rgba(87, 163, 183, 0.3);
+    margin-left:40vw;
+    margin-right:40vw;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border-radius: 25px;
+}
+
+input{
+    padding:10px 10px;
+    border:1px solid #d5d9da;
+    border-radius:5px;
+    box-shadow: 0 0 5px #e8e9eb inset;
+    width:328px; /* 400 (#container) - 40 (li margins) -  10 (span paddings) - 20 (input paddings) - 2 (input borders) */
+    font-size:1em;
+    outline:0; /* remove webkit focus styles */
+}
+
+button{
+    background-color: black;
+    
+    border: none;
+    color: white;
+    padding:8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+
+}
+
+.fillable{
+    margin:0px;
+}

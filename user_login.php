@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>User Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css" />
-    <script src="js/userlogin.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/default.css" />
+    
 </head>
 <body class="bgimg">
 <div id="container">
@@ -30,43 +30,6 @@
     </form>
 </div>
 </body>
+<script src='js/jquery.min.js'></script>>
+<script src='js/userlogin.js'></script>
 </html>
-
-<?php
-
-if (isset($_POST['username']))
-{
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
-
-    $query = $conn->prepare("SELECT password, id FROM speler WHERE username LIKE '".$username."'");
-
-    $query->execute();
-
-    $result = $query->fetch();
-
-    $verify = password_verify($password, $result['password']);
-
-    if ($verify)
-    {
-        $_SESSION['id'] = $result['id'];
-
-        header("Location: user.php");
-        
-    }
-    else
-    {
-        echo '<script type="text/javascript">document.getElementById("message").innerHTML = "Incorrect username and/or password.";</script>';
-    }
-
-    var_dump($verify);
-
-    if (isset($_SESSION['id']))
-    {
-        var_dump($_SESSION);
-    }
-}
-
-?>
