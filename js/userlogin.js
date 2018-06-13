@@ -5,12 +5,14 @@ var login_failed = function()
 
 $('#loginform').submit(function(event){
     event.preventDefault();
+    
     var formData = $('#loginform').serialize();
     $.ajax({
         type: 'POST',
         url:'login.php',
         data:formData,
         success: function(result) {
+            
             if(result == 'success'){
                 $('#overlay').css({'display' : 'none'});
             }

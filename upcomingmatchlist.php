@@ -13,14 +13,33 @@
     <body id='body' class="bgimg">
         
         <?php
-            $toernooinr = 1;
-            $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
-            $wedstrijdQuery = $conn->prepare("SELECT nummer,speler1,speler2,speler3,speler4,tafel FROM wedstrijd WHERE toernooi = :toernooinr AND tijd is null");
+
+            
             
 
-            $wedstrijdQuery->execute([
-                                'toernooinr'=> $toernooinr
-                            ]);
+            $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+
+
+            
+            if(isset($_GET['toernooinr'])){
+                $toernooinr = $_GET['toernooinr'];
+                $wedstrijdQuery = $conn->prepare("SELECT nummer,speler1,speler2,speler3,speler4,tafel FROM wedstrijd WHERE toernooi = :toernooinr AND tijd is null");
+                $wedstrijdQuery->execute([
+                    'toernooinr'=> $toernooinr
+                    
+                ]);
+            }
+
+            if(isset($_GET['spelerid'])){
+                $playerid = $_GET['spelerid'];
+                $wedstrijdQuery = $conn->prepare("SELECT nummer,speler1,speler2,speler3,speler4,tafel FROM wedstrijd WHERE (speler1 = :id OR speler2 =:id OR speler3=:id OR speler4=:id) AND tijd is null");
+                $wedstrijdQuery->execute([
+                    'id'=> $playerid
+                ]);
+            }
+
+           
+
             $nameQuery = $conn->prepare("SELECT roepnaam,achternaam FROM speler WHERE id = :id");
             
             
