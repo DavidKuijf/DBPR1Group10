@@ -128,3 +128,8 @@ h1
     border-radius:5px 5px 0 0; /* otherwise we get some uncut corners with container div */
     text-shadow:1px 1px 0 #fff;
 }
+
+#skill
+{
+    display:none;
+}

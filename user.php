@@ -115,21 +115,23 @@ if (isset($_POST['edit']))
                 <label for="username">Gebruikersnaam</label>
                 <span><input type="text" name="username" value='<?php echo "$username" ?>'></span><br>
             </li>
-            <li>
-                <label for="skillselect">Bekwaamheid</label>
-                <span>
-                    <select name="skillselect" id="skillselect">
-                        <option value="0">Bronze</option>
-                        <option value="1">Silver</option>
-                        <option value="2">Gold</option>
-                        <option value="3">Platinum</option>
-                        <option value="4">Diamond</option>
-                    </select>
-                </span>
-            </li>
             <?php
                 if ($currentisadmin == 1)
                 {
+                    echo '
+                    <li>
+                        <label for="skillselect">Bekwaamheid</label>
+                        <span>
+                            <select name="skillselect" id="skillselect">
+                                <option value="0">Bronze</option>
+                                <option value="1">Silver</option>
+                                <option value="2">Gold</option>
+                                <option value="3">Platinum</option>
+                                <option value="4">Diamond</option>
+                            </select>
+                        </span>
+                    </li>'; 
+                    
                     if ($isadmin == 1)
                     {
                         echo '<li><label for="isadmin">Admin?</label><span><input type="checkbox" name="isadmin" checked></span>'; 
