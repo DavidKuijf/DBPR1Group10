@@ -25,9 +25,13 @@ h1 html {
   
 }
 
-.optionMenuContainer{
+.optionMenuContainerLeft{
   float: left;
 }
+.optionMenuContainerRight{
+  float: right;
+}
+
 .optionMenuButton{
   display: block;
   color: white;
