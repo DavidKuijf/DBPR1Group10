@@ -13,9 +13,9 @@
     
 </head>
 <body class="bgimg">
-<div id="container">
+<div id="container" class="center">
     <h1>Login</h1>
-    <form method="post" class="center" name="loginform" id="loginform">
+    <form method="post" name="loginform" id="loginform">
         <ul>
             <li>
                 <label for="username">Username</label>

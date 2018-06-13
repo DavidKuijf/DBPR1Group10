@@ -5,7 +5,8 @@
     
     <head >
         <meta name="robots" content="noindex">
-        <link rel="stylesheet" type="text/css" href="css/default.css">  
+        <link rel="stylesheet" type="text/css" href="css/default.css"> 
+        <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css" />
     </head>
         
     
@@ -17,7 +18,7 @@
                 
                 <div id="menu" class="menu">
                     <a href="scoreboard.php" class"menuButton"><img src="Images/vs.png" class='reframe'></a>
-                    <a href="testpage.php" class"menuButton"><img src="Images/podium.png" class='reframe'></a>
+                    <a href="upcomingmatchselection.php" class"menuButton"><img src="Images/podium.png" class='reframe'></a>
                     <a href="create_tournament.php" class"menuButton"><img src="Images/tournament.png" class='reframe'></a>
                     <a href="testpage.php" class"menuButton"><img src="Images/gears.png" class='reframe'></a>
 
@@ -30,6 +31,7 @@
     <!--including jquery-->
     <script src="js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+    <script src-"js/userlogin.js"></script>
     <script>
             $.ajax({
             url: 'sessioncheck.php',
