@@ -1,5 +1,11 @@
 
 <?php
+ 
+  session_start();
+  if(!isset($_SESSION['id']))
+    {
+      header('Location: index.php');
+    } 
     $players = $_GET['selected'];
     $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
 
