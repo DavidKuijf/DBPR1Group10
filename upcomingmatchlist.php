@@ -45,28 +45,26 @@
                 ]);
             }
 
-           
-
             $nameQuery = $conn->prepare("SELECT roepnaam,achternaam FROM speler WHERE id = :id");
             
             
-            while($result1 = $wedstrijdQuery->fetch()){
+            while($wedstrijfQueryResult = $wedstrijdQuery->fetch()){
                 
-                $nameQuery->execute(['id'=>$result1['speler1']]);
+                $nameQuery->execute(['id'=>$wedstrijfQueryResult['speler1']]);
                 $speler1Naam = $nameQuery->fetch();
-                $nameQuery->execute(['id'=>$result1['speler2']]);
+                $nameQuery->execute(['id'=>$wedstrijfQueryResult['speler2']]);
                 $speler2Naam = $nameQuery->fetch();
-                $nameQuery->execute(['id'=>$result1['speler3']]);
+                $nameQuery->execute(['id'=>$wedstrijfQueryResult['speler3']]);
                 $speler3Naam = $nameQuery->fetch();
-                $nameQuery->execute(['id'=>$result1['speler4']]);
+                $nameQuery->execute(['id'=>$wedstrijfQueryResult['speler4']]);
                 $speler4Naam = $nameQuery->fetch();
                 
                 
-                if($result1['speler2']==null){
+                if($wedstrijfQueryResult['speler2']==null){
                     echo 
                     "<div ' class='upcomingmatchblock'>" .
                         "<div class='matchblocknumber'>".
-                            $result1['nummer'].
+                            $wedstrijfQueryResult['nummer'].
                         "</div>".
 
                         "<div class='matchblockteam1'>".
@@ -82,19 +80,19 @@
                         "</div>".
 
                         "<div class='matchblocktime'>".
-                            "Tijd:<input id='timeinput".$result1['nummer']."' class='matchinput' type='number' name='time' value='0'>".
+                            "Tijd:<input id='timeinput".$wedstrijfQueryResult['nummer']."' class='matchinput' type='number' name='time' value='0'>".
                         "</div>".
 
                         "<div class='matchblockinput1'>".
-                            "<input id='score1input".$result1['nummer']."' class='matchinput' type='number' name='score1' value='0'>".
+                            "<input id='score1input".$wedstrijfQueryResult['nummer']."' class='matchinput' type='number' name='score1' value='0'>".
                         "</div>".
 
                         "<div class='matchblockinput2'>".
-                            "<input id='score2input".$result1['nummer']."' class='matchinput' type='number' name='score2' value='0'>".
+                            "<input id='score2input".$wedstrijfQueryResult['nummer']."' class='matchinput' type='number' name='score2' value='0'>".
                         "</div>".
                         
                         "<div class='matchbutton'>".
-                            "<a href='#' id='matchbutton'  data-value='".$result1['nummer']."'>Beëindig</a>".
+                            "<a href='#' id='matchbutton'  data-value='".$wedstrijfQueryResult['nummer']."'>Beëindig</a>".
                         "</div>".
                         
                         "<div class='matchblockfooter'>".
@@ -103,12 +101,12 @@
                     "</div>"
                 ;
                 }
-                if($result1['speler2']!=null){
-                //." ".$result1['score1']." ".$result1['score2']
+                if($wedstrijfQueryResult['speler2']!=null){
+                //." ".$wedstrijfQueryResult['score1']." ".$wedstrijfQueryResult['score2']
                 echo 
                     "<div  class='upcomingmatchblock'>" .
                         "<div  class='matchblocknumber'>".
-                            $result1['nummer'].
+                            $wedstrijfQueryResult['nummer'].
                         "</div>".
 
                         "<div class='matchblockteam1'>".
@@ -124,19 +122,19 @@
                         "</div>".
 
                         "<div class='matchblocktime'>".
-                            "Tijd:<input id='timeinput".$result1['nummer']."' class='matchinput' type='number' name='time' value='0'>".
+                            "Tijd:<input id='timeinput".$wedstrijfQueryResult['nummer']."' class='matchinput' type='number' name='time' value='0'>".
                         "</div>".
 
                         "<div class='matchblockinput1'>".
-                            "<input id='score1input".$result1['nummer']."' class='matchinput' type='number' name='score1' value='0'>".
+                            "<input id='score1input".$wedstrijfQueryResult['nummer']."' class='matchinput' type='number' name='score1' value='0'>".
                         "</div>".
 
                         "<div class='matchblockinput2'>".
-                            "<input id='score2input".$result1['nummer']."' class='matchinput' type='number' name='score2' value='0'>".
+                            "<input id='score2input".$wedstrijfQueryResult['nummer']."' class='matchinput' type='number' name='score2' value='0'>".
                         "</div>".
                         
                         "<div class='matchbutton' >".
-                            "<a href='#' id='matchbutton'  data-value='".$result1['nummer']."'>Beëindig</a>".
+                            "<a href='#' id='matchbutton'  data-value='".$wedstrijfQueryResult['nummer']."'>Beëindig</a>".
                         "</div>".
                         
                         "<div class='matchblockfooter'>
