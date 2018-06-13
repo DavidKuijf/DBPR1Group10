@@ -7,9 +7,9 @@ if (isset($_POST['username']))
 
     $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
 
-    $query = $conn->prepare("SELECT password, id FROM speler WHERE username LIKE '".$username."'");
+    $query = $conn->prepare("SELECT password, id FROM speler WHERE username LIKE :username");
 
-    $query->execute();
+    $query->execute(['username'=>$username]);
 
     $result = $query->fetch();
 
@@ -29,4 +29,3 @@ if (isset($_POST['username']))
     }
 }
 
-?>

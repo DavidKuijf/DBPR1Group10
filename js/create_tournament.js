@@ -61,15 +61,12 @@ $('#selectableUserList').multiSelect({
      }
      else{
         
-        $('#deselect-all').fadeOut();
-    
         $.ajax({
           type: "GET",
-          url: "generate_match.php",
+          url: "tournament_generation.php",
           data: {selected : selected},
           success: function(data){
-              $('#fillable').empty();
-              $('#fillable').html(data);
+            $('#fillable').html(data);
           }     
         });
 
