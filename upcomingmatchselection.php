@@ -24,23 +24,23 @@
     </ul>
     <div id="container" class="center">
 
-        <form method="GET" name="matchselector" id="matchselector" action="/upcomingmatchlist.php">
-            <ul>
-                <li>
-                    <label for="toernooinr">Toernooi id</label><br>
-                    <span><input type="number" name="toernooinr" ></span><br>
-                </li>
-                <li>
-                    <span>Of</span>
-                </li>
-                <li>
-                    <label for="spelerid">Speler ID</label><br>
-                    <span><input type="number" name="spelerid" id="spelerid"></span><br>
-                <li>
-                    <button type"submit" name="search" id="search">zoek</button>
-                </li>
-        </form>
-    </div>
+    <form method="GET" name="matchselector" id="matchselector" action="/upcomingmatchlist.php">
+        <ul>
+            <li>
+                <label for="toernooinr">Toernooi id</label><br>
+                <span><input type="number" name="toernooinr" id="toernooinr" ></span><br>
+            </li>
+            <li>
+                <span>Of</span>
+            </li>
+            <li>
+                <label for="spelerid">Speler ID</label><br>
+                <span><input type="number" name="spelerid" id="spelerid"></span><br>
+            <li>
+                <button type"submit" name="search" id="search">zoek</button>
+            </li>
+    </form>
+</div>
 </body>
 <script src='js/jquery.min.js'></script>>
 <script src='js/userlogin.js'></script>

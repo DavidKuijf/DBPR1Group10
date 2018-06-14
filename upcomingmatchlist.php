@@ -28,16 +28,27 @@
 
 
             
-            if(isset($_GET['toernooinr'])){
+            if($_GET['toernooinr']!='')
+            {
                 $toernooinr = $_GET['toernooinr'];
                 $wedstrijdQuery = $conn->prepare("SELECT nummer,speler1,speler2,speler3,speler4,tafel FROM wedstrijd WHERE toernooi = :toernooinr AND tijd is null");
                 $wedstrijdQuery->execute([
                     'toernooinr'=> $toernooinr
                     
                 ]);
+                $scoreQuery = $conn->prepare("SELECT roepnaam,achternaam,score FROM deelnemer JOIN speler on deelnemer.spelerid = speler.id  WHERE toernooinr = :toernooinr");
+                $scoreQuery->execute(['toernooinr'=> $toernooinr]);
+                echo "<div class ='scoreboard' name='scoreboard' id='scoreboard'><ul>";
+
+                while($scoreQueryResult = $scoreQuery->fetch())
+                {
+                    echo "<li>".ucwords ( $scoreQueryResult['roepnaam'] ,"\t\r\n\f\v" )." ". ucwords ( $scoreQueryResult['achternaam'] ,"\t\r\n\f\v" )." heeft ".$scoreQueryResult['score']." punten</li>";
+                }
+                
+                echo "</ul></div>'";
             }
 
-            if(isset($_GET['spelerid'])){
+            elseif($_GET['spelerid']!=''){
                 $playerid = $_GET['spelerid'];
                 $wedstrijdQuery = $conn->prepare("SELECT nummer,speler1,speler2,speler3,speler4,tafel FROM wedstrijd WHERE (speler1 = :id OR speler2 =:id OR speler3=:id OR speler4=:id) AND tijd is null");
                 $wedstrijdQuery->execute([
@@ -47,24 +58,25 @@
 
             $nameQuery = $conn->prepare("SELECT roepnaam,achternaam FROM speler WHERE id = :id");
             
-            
-            while($wedstrijfQueryResult = $wedstrijdQuery->fetch()){
+            echo "<div id ='matches'>";
+            while($wedstrijdQueryResult = $wedstrijdQuery->fetch()){
                 
-                $nameQuery->execute(['id'=>$wedstrijfQueryResult['speler1']]);
+                $nameQuery->execute(['id'=>$wedstrijdQueryResult['speler1']]);
                 $speler1Naam = $nameQuery->fetch();
-                $nameQuery->execute(['id'=>$wedstrijfQueryResult['speler2']]);
+                $nameQuery->execute(['id'=>$wedstrijdQueryResult['speler2']]);
                 $speler2Naam = $nameQuery->fetch();
-                $nameQuery->execute(['id'=>$wedstrijfQueryResult['speler3']]);
+                $nameQuery->execute(['id'=>$wedstrijdQueryResult['speler3']]);
                 $speler3Naam = $nameQuery->fetch();
-                $nameQuery->execute(['id'=>$wedstrijfQueryResult['speler4']]);
+                $nameQuery->execute(['id'=>$wedstrijdQueryResult['speler4']]);
                 $speler4Naam = $nameQuery->fetch();
                 
                 
-                if($wedstrijfQueryResult['speler2']==null){
+                if($wedstrijdQueryResult['speler2']==null)
+                {
                     echo 
-                    "<div ' class='upcomingmatchblock'>" .
+                    "<div ' class='upcomingmatchblock' id='upcomingmatchblock'>" .
                         "<div class='matchblocknumber'>".
-                            $wedstrijfQueryResult['nummer'].
+                            $wedstrijdQueryResult['nummer'].
                         "</div>".
 
                         "<div class='matchblockteam1'>".
@@ -80,20 +92,20 @@
                         "</div>".
 
                         "<div class='matchblocktime'>".
-                            "Tijd:<input id='timeinput".$wedstrijfQueryResult['nummer']."' class='matchinput' type='number' name='time' value='0'>".
+                            "Tijd:<input id='timeinput".$wedstrijdQueryResult['nummer']."' class='matchinput' type='number' name='time' value='0' AUTOCOMPLETE=OFF>".
                         "</div>".
 
                         "<div class='matchblockinput1'>".
-                            "<input id='score1input".$wedstrijfQueryResult['nummer']."' class='matchinput' type='number' name='score1' value='0'>".
+                            "<input id='score1input".$wedstrijdQueryResult['nummer']."' class='matchinput' type='number' name='score1' value='0' AUTOCOMPLETE=OFF>".
                         "</div>".
 
                         "<div class='matchblockinput2'>".
-                            "<input id='score2input".$wedstrijfQueryResult['nummer']."' class='matchinput' type='number' name='score2' value='0'>".
+                            "<input id='score2input".$wedstrijdQueryResult['nummer']."' class='matchinput' type='number' name='score2' value='0' AUTOCOMPLETE=OFF>".
                         "</div>".
                         
-                        "<div class='matchbutton'>".
-                            "<a href='#' id='matchbutton'  data-value='".$wedstrijfQueryResult['nummer']."'>Beëindig</a>".
-                        "</div>".
+                        "<span class='matchbutton'>".
+                            "<a href='#' id='matchbutton'  data-value='".$wedstrijdQueryResult['nummer']."'>Beëindig</a>".
+                        "</span>".
                         
                         "<div class='matchblockfooter'>".
                             
@@ -101,12 +113,11 @@
                     "</div>"
                 ;
                 }
-                if($wedstrijfQueryResult['speler2']!=null){
-                //." ".$wedstrijfQueryResult['score1']." ".$wedstrijfQueryResult['score2']
+                if($wedstrijdQueryResult['speler2']!=null){
                 echo 
                     "<div  class='upcomingmatchblock'>" .
                         "<div  class='matchblocknumber'>".
-                            $wedstrijfQueryResult['nummer'].
+                            $wedstrijdQueryResult['nummer'].
                         "</div>".
 
                         "<div class='matchblockteam1'>".
@@ -122,19 +133,19 @@
                         "</div>".
 
                         "<div class='matchblocktime'>".
-                            "Tijd:<input id='timeinput".$wedstrijfQueryResult['nummer']."' class='matchinput' type='number' name='time' value='0'>".
+                            "Tijd:<input id='timeinput".$wedstrijdQueryResult['nummer']."' class='matchinput' type='number' name='time' value='0' AUTOCOMPLETE=OFF>".
                         "</div>".
 
                         "<div class='matchblockinput1'>".
-                            "<input id='score1input".$wedstrijfQueryResult['nummer']."' class='matchinput' type='number' name='score1' value='0'>".
+                            "<input id='score1input".$wedstrijdQueryResult['nummer']."' class='matchinput' type='number' name='score1' value='0' AUTOCOMPLETE=OFF>".
                         "</div>".
 
                         "<div class='matchblockinput2'>".
-                            "<input id='score2input".$wedstrijfQueryResult['nummer']."' class='matchinput' type='number' name='score2' value='0'>".
+                            "<input id='score2input".$wedstrijdQueryResult['nummer']."' class='matchinput' type='number' name='score2' value='0' AUTOCOMPLETE=OFF>".
                         "</div>".
                         
                         "<div class='matchbutton' >".
-                            "<a href='#' id='matchbutton'  data-value='".$wedstrijfQueryResult['nummer']."'>Beëindig</a>".
+                            "<a href='#' id='matchbutton'  data-value='".$wedstrijdQueryResult['nummer']."'>Beëindig</a>".
                         "</div>".
                         
                         "<div class='matchblockfooter'>
@@ -146,6 +157,7 @@
                 
                 
             }
+            echo "</div>"
 
         ?>
 
@@ -159,9 +171,12 @@
     <script src="js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
     <script src="js/matchlist.js"></script>
-    <script> <?php echo "var tournamentnr ='{$toernooinr}';" ?> </script>
-        
-        
+    <script> 
+    <?php echo "var tournamentnr ='{$toernooinr}';" ?>
+    determineWinner();
     </script>
+        
+        
+    
     
 </html> 

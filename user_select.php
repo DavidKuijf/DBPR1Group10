@@ -1,4 +1,4 @@
-<html>
+
 <?php 
   session_start();
   if(!isset($_SESSION['id']))
@@ -6,7 +6,7 @@
       header('Location: index.php');
     } 
 ?>
-
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,14 +55,11 @@
   </div>
   
 </body>
-  <script>
-  var maxSelected = '<?php echo $_POST["amountOfPlayers"]?>;'
-    
-  </script>
+
+
   <script src='js/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js'></script>
   <script src='js/jquery.multi-select.js'></script>
   <script src='js/create_tournament.js'></script> 
-
 </html>
 

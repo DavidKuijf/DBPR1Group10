@@ -5,12 +5,7 @@ $('a').click(function(){
     var score2 = $('#score2input'+matchid).val();
     var time = $('#timeinput' +matchid).val();
 
-   /* console.log(matchid);
-    console.log(score1);
-    console.log(score2);
-    console.log(time);
-    console.log(tournamentnr);*/
-    $(this).parents('div').fadeOut();
+    $(this).parents('.upcomingmatchblock').fadeOut();
     $.ajax({
       type: "GET",
       url: "write_match.php",
@@ -22,6 +17,26 @@ $('a').click(function(){
             },
       success: function(data){
           $('#fillable').html(data);
-      }     
+      } 
+      
     });
-    })
+
+    determineWinner();
+    
+})
+
+function determineWinner(){
+    
+    if($('#matches').contents().length == 0){
+        $.ajax({
+            type: "POST",
+            url: "write_winner.php",
+            data: {tournamentnr:tournamentnr},
+            success: function(data){
+                console.log("confirm");
+                $('#scoreboard').html(data);
+            }
+
+        });
+    }
+}

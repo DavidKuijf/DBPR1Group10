@@ -18,10 +18,13 @@ if (isset($_SESSION['id']))
 }
 else
 {
-    
     header('Location: index.php');
 } 
 
+if (isset($_POST['id']))
+{
+    $userid = $_POST['id'];
+}
 
 $query = $conn->prepare("SELECT roepnaam, achternaam, username, isadmin, skill FROM speler WHERE id = :id");
         
@@ -81,26 +84,69 @@ if (isset($_POST['edit']))
 </head>
 
 <body>
-    <ul class="optionMenu">
-        <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='home'>Thuis</a>
-        <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='log-out'>log uit</a>
-        <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='create-user'>Maak account</a>
-    </ul>
-    <div id="infocontainer">
-        <h1>Gebruikersprofiel</h1>
-        <form method="post">
-            <ul>
-                <?php
-                echo '<li>';
+<ul class="optionMenu">
+    <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='home'>Thuis</a>
+    <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='log-out'>log uit</a>
+    <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='create-user'>Maak account</a>
+</ul>
+<div id="infocontainer">
+    <h1>Gebruikersprofiel</h1>
+    <form method="post">
+        <ul>
+            <?php
+            echo '<li>';
+            if ($currentisadmin == 1)
+            {
+                echo '<label for="userselect">Speler</label>';
+                echo '<span><select id="userlist">';
+                
+                $query = $conn->prepare("SELECT id, roepnaam, achternaam FROM speler");
+                $query->execute();
+
+                while($result = $query->fetch())
+                {
+                    echo "<option value='" . $result['id'] . "'>" . $result['id'] . " " . $result['roepnaam'] . " " . $result['achternaam'] . "</option>";
+                }
+
+                echo '</select></span>';
+                echo '<input type="button" name="loaduser" id="loaduser" value="Laad gegevens">';
+            }
+            echo '</li>';
+            ?>
+            <li id="userid">
+                <label for="userid">User Id</label>
+                <span><input type="text" name="id" id="id" value='<?php echo "$userid" ?>'></span>
+            </li>
+            <li>
+                <label for="firstname">Roepnaam</label>
+                <span><input type="text" name="firstname" value='<?php echo "$firstname" ?>'></span><br>
+            </li>
+            <li>
+                <label for="lastname">Achternaam</label>
+                <span><input type="text" name="lastname" value='<?php echo "$lastname" ?>'></span><br>
+            </li>
+            <li>
+                <label for="username">Gebruikersnaam</label>
+                <span><input type="text" name="username" value='<?php echo "$username" ?>'></span><br>
+            </li>
+            <?php
                 if ($currentisadmin == 1)
                 {
-                    echo '<label for="userselect">Speler</label>';
-                    echo '<span><select id="userlist">';
+                    echo '
+                    <li>
+                        <label for="skillselect">Bekwaamheid</label>
+                        <span>
+                            <select name="skillselect" id="skillselect">
+                                <option value="0">Bronze</option>
+                                <option value="1">Silver</option>
+                                <option value="2">Gold</option>
+                                <option value="3">Platinum</option>
+                                <option value="4">Diamond</option>
+                            </select>
+                        </span>
+                    </li>'; 
                     
-                    $query = $conn->prepare("SELECT id, roepnaam, achternaam FROM speler");
-                    $query->execute();
-
-                    while($result = $query->fetch())
+                    if ($isadmin == 1)
                     {
                         echo "<option value='" . $result['id'] . "'>" . $result['id'] . " " . $result['roepnaam'] . " " . $result['achternaam'] . "</option>";
                     }
