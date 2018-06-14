@@ -37,7 +37,7 @@ if($_GET['toernooinr'] != "")
         echo "<li>" . ucwords($scoreQueryResult['roepnaam'], "\t\r\n\f\v") . " " . ucwords($scoreQueryResult['achternaam'], "\t\r\n\f\v") . " heeft " . $scoreQueryResult['score'] . " punten</li>";
     }
                 
-    echo "</ul></div>'";
+    echo "</ul></div>";
 }
 
 elseif($_GET['spelerid']!='')
