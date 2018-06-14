@@ -25,11 +25,11 @@ if(!isset($_SESSION['id']))
   <!-- start -->
 
     <ul class="optionMenu">
-      <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='stop'>Thuis</a>
-      <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='ok'>Creëer poule</a>
-      <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='deselectAll'>Verwijder gekozen spelers</a>
-      <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='logout'>log uit</a>
-      <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='createuser'>Maak account</a>
+      <li class="optionMenuContainerLeft"><a class="optionMenuButton" href="#" id="stop">Thuis</a>
+      <li class="optionMenuContainerLeft"><a class="optionMenuButton" href="#" id="ok">Creëer poule</a>
+      <li class="optionMenuContainerLeft"><a class="optionMenuButton" href="#" id="deselectAll">Verwijder gekozen spelers</a>
+      <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="logout">log uit</a>
+      <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="createuser">Maak account</a>
     </ul>
 
   <div id='hideable'>

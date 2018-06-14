@@ -19,31 +19,29 @@ if(!isset($_SESSION['id']))
     <link rel="stylesheet" type="text/css" media="screen" href="css/tournamentlist.css"/>
 </head>
 <body class="bgimg">
+<ul class="optionMenu">
+    <li class="optionMenuContainerLeft"><a class="optionMenuButton" href="#" id="home">Thuis</a>
+    <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="log-out">log uit</a>
+    <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="create-user">Maak account</a>
+</ul>
+<div id="container" class="center" style="margin-top:20px;">
 
-    <ul class="optionMenu">
-        <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='home'>Thuis</a>
-        <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='log-out'>log uit</a>
-        <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='create-user'>Maak account</a>
-    </ul>
-    
-    <div id="container" class="center" style="margin-top:20px;">
-
-    <form method="GET" name="matchselector" id="matchselector" action="/upcomingmatchlist.php">
-        <ul>
-            <li>
-                <label for="toernooinr">Toernooi id</label><br>
-                <span><input type="number" name="toernooinr" id="toernooinr" ></span><br>
-            </li>
-            <li>
-                <span>Of</span>
-            </li>
-            <li>
-                <label for="spelerid">Speler ID</label><br>
-                <span><input type="number" name="spelerid" id="spelerid"></span><br>
-            <li>
-                <button type"submit" name="search" id="search">zoek</button>
-            </li>
-    </form>
+<form method="GET" name="matchselector" id="matchselector" action="/upcomingmatchlist.php">
+    <ul>
+        <li>
+            <label for="toernooinr">Toernooi id</label><br>
+            <span><input type="number" name="toernooinr" id="toernooinr" ></span><br>
+        </li>
+        <li>
+            <span>Of</span>
+        </li>
+        <li>
+            <label for="spelerid">Speler ID</label><br>
+            <span><input type="number" name="spelerid" id="spelerid"></span><br>
+        <li>
+            <button type"submit" name="search" id="search">zoek</button>
+        </li>
+</form>
 </div>
 
 <div class ="tournamentlistcontainer" id="tournamentlistcontainer">
