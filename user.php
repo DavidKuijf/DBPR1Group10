@@ -91,7 +91,8 @@ if (isset($_POST['edit']))
 
 <body>
 <ul class="optionMenu">
-    <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='home'>Thuis</a>
+    <!--DOUBLE QUOTES ONLY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <li class="optionMenuContainerLeft"><a class="optionMenuButton" href='#' id='home'>Thuis</a>
     <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='log-out'>log uit</a>
     <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='create-user'>Maak account</a>
 </ul>
