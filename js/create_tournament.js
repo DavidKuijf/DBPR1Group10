@@ -70,11 +70,11 @@ $('#selectableUserList').multiSelect({
     
     })
 
-  $('#create-user').click(function(){
+  $('#createuser').click(function(){
       window.location.replace('user_register.php');
   });
   
-  $('#log-out').click(function(){
+  $('#logout').click(function(){
       window.location.replace('logout.php');
   });
 
