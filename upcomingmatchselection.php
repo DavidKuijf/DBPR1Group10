@@ -42,6 +42,7 @@ if(!isset($_SESSION['id']))
             <button type"submit" name="search" id="search">zoek</button>
         </li>
 </form>
+
 </div>
 
 <div class ="tournamentlistcontainer" id="tournamentlistcontainer">
