@@ -2,15 +2,17 @@ var amountOfPlayers
 $('#optionButton').click(function(){
     amountOfPlayers = $('#deelnemersInput').val();
     $.ajax({
-            type: "POST",
-            url: "user_select.php",
-            data: {amountOFPlayers:amountOfPlayers},
-            success: function(data){
-                $('#fillable').html(data);
-                $('#tournamentOptionForm').hide();
-            }    
-          
-        });
+      type: "POST",
+      url: "user_select.php",
+      data: {amountOFPlayers:amountOfPlayers},
+      success: function(data){
+        $('#fillable').html(data);
+        $('#tournamentOptionForm').hide();
+      }    
+    });
+    $('#home').hide();
+    $('#log-out').hide();
+    $('#create-user').hide();
 });
 
 var selected = [];
@@ -32,8 +34,7 @@ $('#selectableUserList').multiSelect({
         selected.splice(index,1);
       }
     }
-    
-  });
+});
 
 
   $('#deselectAll').click(function(){
@@ -76,3 +77,5 @@ $('#selectableUserList').multiSelect({
   $('#log-out').click(function(){
       window.location.replace('logout.php');
   });
+
+
