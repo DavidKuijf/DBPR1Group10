@@ -1,5 +1,11 @@
 <?php
 
+session_start();
+if(!isset($_SESSION['id']))
+  {
+    header('Location: index.php');
+  } 
+
     include 'database.php';
     $name = $_POST['name'];
     $password = $_POST['password'];

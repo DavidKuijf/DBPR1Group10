@@ -21,7 +21,7 @@ $('#selectableUserList').multiSelect({
     
     afterSelect: function(values){
       selected.push(values[0]);
-      if (selected.length>=parseInt(maxselected)){
+      if (selected.length>=parseInt(maxSelected)){
         $('#selectableUserList').attr('disabled','disabled');
         $('#selectableUserList').multiSelect('refresh');
       }
@@ -42,8 +42,8 @@ $('#selectableUserList').multiSelect({
     return false;
   });*/
 
-  $('#deselect-all').click(function(){
-    $('#selectableUserList').multiSelect('deselect_all');
+  $('#deselectSll').click(function(){
+    $('#selectableUserList').multiSelect('deselectAll');
     $('#selectableUserList').removeAttr('disabled','disabled');
     $('#selectableUserList').multiSelect('refresh');
     selected = [];
@@ -57,7 +57,7 @@ $('#selectableUserList').multiSelect({
 
   $('#ok').click(function(){
      if(selected.length<parseInt(maxselected)){
-         alert("Selecteer "+parseInt(maxselected)+" spelers");
+         alert("Selecteer "+parseInt(maxselected)+' spelers');
      }
      else{
         

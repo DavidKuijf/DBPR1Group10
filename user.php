@@ -16,6 +16,13 @@ if (isset($_SESSION['id']))
 
     $currentisadmin = $result[0]['isadmin'];
 }
+else
+{
+    
+    header('Location: index.php');
+} 
+
+}
 
 $query = $conn->prepare("SELECT roepnaam, achternaam, username, isadmin, skill FROM speler WHERE id = :id");
         

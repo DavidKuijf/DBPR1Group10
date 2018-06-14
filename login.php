@@ -1,4 +1,9 @@
 <?php
+  session_start();
+  if(!isset($_SESSION['id']))
+    {
+      header('Location: index.php');
+    } 
 
 if (isset($_POST['username']))
 {
@@ -18,7 +23,7 @@ if (isset($_POST['username']))
 
     if ($verify)
     {
-        session_start();
+        
         $_SESSION['id'] = $result['id'];
         echo 'success';
         

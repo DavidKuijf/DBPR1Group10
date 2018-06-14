@@ -1,3 +1,11 @@
+<?php 
+  session_start();
+  if(!isset($_SESSION['id']))
+    {
+      header('Location: index.php');
+    } 
+?>
+
 <div>
     <form id="loginform" class="loginform" action="index.php" submit="" method="post">
     <span>E-mail:</span><br> 
