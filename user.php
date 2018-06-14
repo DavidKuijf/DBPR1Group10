@@ -173,4 +173,5 @@ if (isset($_POST['edit']))
 </body>
 <script src="js/jquery.min.js"></script>
 <script src="js/user.js"></script>
+<script src="js/navigationbar.js"></script>
 </html>
