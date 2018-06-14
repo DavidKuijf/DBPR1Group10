@@ -15,9 +15,14 @@
         <meta name="robots" content="noindex">
         <link rel="stylesheet" type="text/css" href="scoreboard.css">
         <link rel"animationsheet" type="text/css" hraf="animation.css">
-        <script src="js/scoreboard.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/default.css">
     </head>
     <body class="bgimg">
+    <ul class="optionMenu">
+      <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='home'>Thuis</a>
+      <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='log-out'>log uit</a>
+      <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='create-user'>Maak account</a>
+    </ul>
         <div class="center">
             <div id="container">
                 <div id="header">
@@ -40,4 +45,15 @@
             </div>
         </div>
     </body>
+    </body>
+    <script>
+    var maxSelected = '<?php echo $_POST["amountOfPlayers"]?>;'
+
+    </script>
+    <script src="js/scoreboard.js"></script>
+    <script src='js/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js'></script>
+    <script src='js/jquery.multi-select.js'></script>
+    <script src='js/create_tournament.js'></script> 
+    <script src='js/navigationbar.js'></script> 
 </html>

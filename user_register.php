@@ -6,52 +6,61 @@
     <title>User Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css" />    
+    <link rel="stylesheet" type="text/css" media="screen" href="css/default.css" />  
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/userregistration.js"></script>
 </head>
 <body>
-<div id="container">
-    <h1>User Registration</h1>
-    <form method="post" name="registerform" id="registerform">
-        <ul>
-            <li>
-                <label for="firstname">First Name</label>
-                <span><input type="text" name="firstname" required></span><br>
-            </li>
-            <li>
-                <label for="lastname">Last Name</label>
-                <span><input type="text" name="lastname" required></span><br>
-            </li>
-            <li>
-                <label for="username">Username</label>
-                <span><input type="text" name="username" required></span><br>
-            </li>
-            <li>
-                <label for="password">Password</label>
-                <span><input type="password" name="password" id="password" onkeyup="check();" required></span><br>
-            </li>
-            <li>
-                <label for="confirm_password">Confirm Password</label>
-                <span><input type="password" name="confirm_password" id="confirm_password" onkeyup="check();" required></span><br>
-            </li>
-            <li>
-                <span id="message"></span><br><br>
-                <button type="submit" id="register">Register</button>
-            </li>
-        </ul>
-    </form>
+    <ul class="optionMenu">
+        <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='home'>Thuis</a>
+        <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='log-out'>log uit</a>
+        <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='create-user'>Maak account</a>
+    </ul>
+    <div id="container">
+        
+        <h1>User Registration</h1>
+        <form method="post" name="registerform" id="registerform">
+            <ul>
+                <li>
+                    <label for="firstname">First Name</label>
+                    <span><input type="text" name="firstname" required></span><br>
+                </li>
+                <li>
+                    <label for="lastname">Last Name</label>
+                    <span><input type="text" name="lastname" required></span><br>
+                </li>
+                <li>
+                    <label for="username">Username</label>
+                    <span><input type="text" name="username" required></span><br>
+                </li>
+                <li>
+                    <label for="password">Password</label>
+                    <span><input type="password" name="password" id="password" onkeyup="check();" required></span><br>
+                </li>
+                <li>
+                    <label for="confirm_password">Confirm Password</label>
+                    <span><input type="password" name="confirm_password" id="confirm_password" onkeyup="check();" required></span><br>
+                </li>
+                <li>
+                    <span id="message"></span><br><br>
+                    <button type="submit" id="register">Register</button>
+                </li>
+            </ul>
+        </form>
 
-    <div id="pswd_info">
-        <h4>Password must meet the following requirements:</h4>
-        <ul>
-            <li id="letter" class="invalid">At least <strong>one letter</strong></li>
-            <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
-            <li id="number" class="invalid">At least <strong>one number</strong></li>
-            <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
-        </ul>
+        <div id="pswd_info">
+            <h4>Password must meet the following requirements:</h4>
+            <ul>
+                <li id="letter" class="invalid">At least <strong>one letter</strong></li>
+                <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
+                <li id="number" class="invalid">At least <strong>one number</strong></li>
+                <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
+            </ul>
+        </div>
     </div>
-</div>
 </body>
+<script src="js/jquery.min.js"></script>
+<script src="js/navigationbar.js"></script>
 </html>
 
 <?php

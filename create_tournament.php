@@ -17,7 +17,6 @@
 </head>
 
 <body class='bgimg'>
-    
     <div id='tournamentOptionForm' class='form'>
         
         <h1>Tournooi</h1><br>
