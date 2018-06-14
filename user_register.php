@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>User Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css" />    
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/userregistration.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css"/>
 </head>
 <body>
 <div id="container">
@@ -51,7 +49,9 @@
         </ul>
     </div>
 </div>
-</body>
+</body>    
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/userregistration.js"></script>
 </html>
 
 <?php
@@ -88,15 +88,13 @@ if (isset($_POST['username']))
             'isadmin' => 0
         ]);
         
-        header('Location: index.php');
+        header("Location: index.php");
         die();
     }
     else
     {
         echo "Error: username is already taken!";
     }
-
-    
 }
 
 ?>

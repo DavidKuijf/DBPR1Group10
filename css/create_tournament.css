@@ -1,4 +1,5 @@
-.form{
+.form
+{
     border:5px solid white;
     background: rgba(87, 163, 183, 0.3);
     margin-left:40vw;
@@ -10,7 +11,8 @@
     border-radius: 25px;
 }
 
-input{
+input
+{
     padding:10px 10px;
     border:1px solid #d5d9da;
     border-radius:5px;
@@ -20,7 +22,8 @@ input{
     outline:0; /* remove webkit focus styles */
 }
 
-button{
+button
+{
     background-color: black;
     
     border: none;
@@ -33,6 +36,7 @@ button{
 
 }
 
-.fillable{
+.fillable
+{
     margin:0px;
 }

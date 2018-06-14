@@ -22,12 +22,12 @@ if (isset($_POST['username']))
     {
         
         $_SESSION['id'] = $result['id'];
-        echo 'success';
+        echo "success";
         
     }
     else
     {
-        echo 'fail';
+        echo "fail";
     }
 }
 

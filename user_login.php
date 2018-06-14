@@ -10,8 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>User Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css" />
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css" /> 
 </head>
 <body class="bgimg">
 <div id="container" class="center">
@@ -28,16 +27,16 @@
             <li>
                 <button type='submit' name="login" id="login">Log In</button>
             </li>
-           
-           
-    </form>
-            <li>
-                <button name="makeAccountButton" id="makeAccountButton">Registreer</button>
-            </li>
-            <li>
-                <span id='message'></span><br>
-            </li>
         </ul>
+    </form>
+    <ul>
+        <li>
+            <button name="makeAccountButton" id="makeAccountButton">Registreer</button>
+        </li>
+        <li>
+            <span id='message'></span><br>
+        </li>
+    </ul>
 </div>
 </body>
 <script src='js/jquery.min.js'></script>>

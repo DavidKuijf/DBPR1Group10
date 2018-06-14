@@ -19,42 +19,47 @@ h1 html {
     overflow: hidden;
     background-color: #333;
 }
-.reframe{
-  width:200px;
-  height:200px;
+.reframe
+{
+    width:200px;
+    height:200px;
   
 }
 
-.optionMenuContainer{
-  float: left;
+.optionMenuContainer
+{
+    float: left;
 }
-.optionMenuButton{
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.optionMenuButton
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
-.optionMenuButton:hover{
-  background-color: #111;
-}
-
-.overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+.optionMenuButton:hover
+{
+    background-color: #111;
 }
 
-.bgimg {
-    
+.overlay 
+{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.bgimg 
+{
     background-image: url('../Images/Background.jpg');
     height: device-height;
     width: device-width;
@@ -65,23 +70,24 @@ h1 html {
     
 }
 
-.menu{
-    
+.menu
+{
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.menuButton{
-    
+.menuButton
+{
     display:inline-block;
     max-width:200px;
     max-height:200px;
     width: 200px;
     height: 200px;
 }
-.center {
+.center 
+{
     position: absolute;
     
     left: 0;
@@ -92,11 +98,13 @@ h1 html {
     font-size: 18px;
 }
 
-.formfont {
+.formfont 
+{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.fade-in {
+.fade-in 
+{
     animation: fadeIn ease 5s;
     -webkit-animation: fadeIn ease 5s;
     -moz-animation: fadeIn ease 5s;
@@ -104,47 +112,66 @@ h1 html {
     -ms-animation: fadeIn ease 5s;
 }
 
-@keyframes fadeIn{
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+@keyframes fadeIn
+{
+    0% 
+    {
+      opacity:0;
+    }
+
+    100% 
+    {
+      opacity:1;
+    }
 }
 
-@-moz-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+@-moz-keyframes fadeIn 
+{
+    0% 
+    {
+      opacity:0;
+    }
+
+    100% 
+    {
+      opacity:1;
+    }
 }
  
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+@-webkit-keyframes fadeIn 
+{
+    0% 
+    {
+      opacity:0;
+    }
+
+    100% 
+    {
+      opacity:1;
+    }
 }
   
-@-o-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+@-o-keyframes fadeIn 
+{
+    0% 
+    {
+      opacity:0;
+    }
+    100% 
+    {
+      opacity:1;
+    }
 }
   
-@-ms-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
+@-ms-keyframes fadeIn 
+{
+    0% 
+    {
+      opacity:0;
+    }
+    
+    100% 
+    {
+      opacity:1;
+    }
 }
