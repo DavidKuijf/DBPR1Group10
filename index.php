@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <title>DBPRGroup10</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DBPRGroup10</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <head >
-        <meta name="robots" content="noindex">
-        <link rel="stylesheet" type="text/css" href="css/default.css"> 
-        <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css" />
-    </head>
+<head>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" type="text/css" href="css/default.css"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css" />
+</head>
         
     
     <body id='body' class="bgimg">
@@ -28,27 +28,28 @@
                 </div>
             </div>
         </div>
-
-    <div id='overlay' class='overlay'</div>
-    </body>
-    <!--including jquery-->
-    <script src="js/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
-    <script src="js/navigationbar.js"></script>
-    <script src="js/user_login.js"></script>
-    <script>
-            $.ajax({
-            url: 'sessioncheck.php',
-            type: 'POST',
-            success: function(result) {
-                if(result == 'success'){
-                    $('#overlay').css({'display' : 'none'});
-                }
-                else{
-                    $('#overlay').load('user_login.php');
-                    $('#overlay').css({'display' : 'Block'});
-                }
+    </div>
+</div>
+<div id='overlay' class='overlay'</div>
+</body>
+<!--including jquery-->
+<script src="js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+<script src="js/navigationbar.js"></script>
+<script src="js/user_login.js"></script>
+<script>
+        $.ajax({
+        url: 'sessioncheck.php',
+        type: 'POST',
+        success: function(result) {
+            if(result == 'success'){
+                $('#overlay').css({'display' : 'none'});
             }
-        });  
-    </script>
+            else{
+                $('#overlay').load('user_login.php');
+                $('#overlay').css({'display' : 'Block'});
+            }
+        }
+    });  
+</script>
 </html> 

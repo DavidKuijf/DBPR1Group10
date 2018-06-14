@@ -26,13 +26,13 @@
         
         <h1>Tournooi</h1><br>
         <span>Aantal deelnemers</span><br>
-        <input id='deelnemersInput' type='number' name='time' value='6' min='6' max='10'><br>
+        <input id="deelnemersInput" type="number" name="time" value="6" min="6" max="10"><br>
         <span></span><br>
-        <button id='optionButton'>verder</button>
+        <button id="optionButton">verder</button>
     </div>
 
 
-<div id='fillable' class='fillable'></div>
+<div id="fillable" class="fillable"></div>
 </body>
 
 <script src='js/jquery.min.js'></script>
