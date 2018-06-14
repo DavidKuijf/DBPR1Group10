@@ -26,7 +26,6 @@ $("a").click(function() {
 });
 
 function determineWinner() {
-
   if ($("#matches").children().length == 0) {
     $.ajax({
       type: "POST",
