@@ -54,7 +54,7 @@ $("#ok").click(function() {
       url: "tournament_generation.php",
       data: { selected: selected },
       success: function(data) {
-        $("#fillable").html(data);
+        window.location.replace("/upcomingmatchselection.php");
       }
     });
   }

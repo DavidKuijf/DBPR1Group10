@@ -16,9 +16,10 @@ if(!isset($_SESSION['id']))
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/default.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css"/> 
+    <link rel="stylesheet" type="text/css" media="screen" href="css/tournamentlist.css"/>
 </head>
 <body class="bgimg">
-<div id="container" class="center">
+<div id="container" class="center" style='margin-top:20px;'>
     <form method="GET" name="matchselector" id="matchselector" action="/upcomingmatchlist.php">
         <ul>
             <li>
@@ -36,7 +37,20 @@ if(!isset($_SESSION['id']))
             </li>
     </form>
 </div>
+
+<div class ="tournamentlistcontainer id="tournamentlistcontainer">
+    <?php
+        $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+        $onGoingGamesQuery = $conn->prepare("SELECT count(toernooi)as aantal,toernooi FROM wedstrijd where tijd is null group by toernooi ");
+        $onGoingGamesQuery->execute();
+        while($onGoingGamesQueryResult = $onGoingGamesQuery->fetch())
+        {
+            echo ("<div class='tournamentblock' id='toernooi".$onGoingGamesQueryResult['toernooi']."'>"." Toernooi: ".$onGoingGamesQueryResult['toernooi']." Wedstrijden te spelen: ".$onGoingGamesQueryResult['aantal']."</div>");
+        }
+    ?>
+</div>
 </body>
 <script src="js/jquery.min.js"></script>>
 <script src="js/userlogin.js"></script>
+<script src="js/tournamentlist.js"></script>
 </html>
