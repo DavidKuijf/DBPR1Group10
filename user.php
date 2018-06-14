@@ -18,10 +18,12 @@ if (isset($_SESSION['id']))
 }
 else
 {
-    
     header('Location: index.php');
 } 
 
+if (isset($_POST['id']))
+{
+    $userid = $_POST['id'];
 }
 
 $query = $conn->prepare("SELECT roepnaam, achternaam, username, isadmin, skill FROM speler WHERE id = :id");
