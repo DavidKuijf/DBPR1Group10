@@ -24,6 +24,19 @@ a{
     text-decoration: none;
 }
 
+.scoreboard{
+    font-family: 'Anton', sans-serif;
+    margin-left : 10vw;
+    margin-right: 10vw;
+    
+    border : 2px solid black;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgba(197, 202, 202, 0.446);
+    border-radius: 25px;
+}
+
 .matchblockteam1{
     font-family: 'Anton', sans-serif;
     background: #ff6666;
@@ -105,7 +118,8 @@ a{
     font-family: 'Anton', sans-serif;
     grid-area: number;
     text-align: center;
-    
+    display: table-cell;
+    vertical-align: middle;
     font-size: 50;
     color: white;
     background: black;

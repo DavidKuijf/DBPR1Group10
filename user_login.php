@@ -16,7 +16,7 @@
 <body class="bgimg">
 <div id="container" class="center">
     <h1>Login</h1>
-    <form method="post" name="loginform" id="loginform">
+    <form method="post" name="loginForm" id="loginForm">
         <ul>
             <li>
                 <label for="username">Username</label>
@@ -26,11 +26,20 @@
                 <label for="password">Password</label>
                 <span><input type="password" name="password" id="password" required></span><br>
             <li>
-                <button name="login" id="login">Log In</button>
+                <button type='submit' name="login" id="login">Log In</button>
             </li>
+           
+           
     </form>
+            <li>
+                <button name="makeAccountButton" id="makeAccountButton">Registreer</button>
+            </li>
+            <li>
+                <span id='message'></span><br>
+            </li>
+        </ul>
 </div>
 </body>
 <script src='js/jquery.min.js'></script>>
-<script src='js/userlogin.js'></script>
+<script src='js/user_login.js'></script>
 </html>

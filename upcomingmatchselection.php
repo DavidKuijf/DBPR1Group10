@@ -23,7 +23,7 @@
         <ul>
             <li>
                 <label for="toernooinr">Toernooi id</label><br>
-                <span><input type="number" name="toernooinr" ></span><br>
+                <span><input type="number" name="toernooinr" id="toernooinr" ></span><br>
             </li>
             <li>
                 <span>Of</span>
