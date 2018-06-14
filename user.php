@@ -144,7 +144,7 @@ if (isset($_POST['edit']))
                             <option value='1'>Silver</option>
                             <option value='2'>Gold</option>
                             <option value='3'>Platinum</option>
-                                <option value='4'>Diamond</option>
+                            <option value='4'>Diamond</option>
                         </select>
                     </span>
                 </li>"; 
