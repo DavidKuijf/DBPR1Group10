@@ -25,7 +25,7 @@ if(!isset($_SESSION['id']))
         <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='log-out'>log uit</a>
         <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='create-user'>Maak account</a>
     </ul>
-    
+
     <div id="container" class="center" style="margin-top:20px;">
 
     <form method="GET" name="matchselector" id="matchselector" action="/upcomingmatchlist.php">
@@ -46,7 +46,7 @@ if(!isset($_SESSION['id']))
     </form>
 </div>
 
-<div class ="tournamentlistcontainer id="tournamentlistcontainer">
+<div class ="tournamentlistcontainer" id="tournamentlistcontainer">
     <?php
         $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
         $onGoingGamesQuery = $conn->prepare("SELECT count(toernooi)as aantal,toernooi FROM wedstrijd where tijd is null group by toernooi ");
@@ -58,13 +58,9 @@ if(!isset($_SESSION['id']))
     ?>
 </div>
 </body>
-<<<<<<< HEAD
-<script src="js/jquery.min.js"></script>>
-<script src="js/userlogin.js"></script>
-<script src="js/tournamentlist.js"></script>
-=======
+
 <script src='js/jquery.min.js'></script>>
 <script src='js/userlogin.js'></script>
 <script src="js/navigationbar.js"></script>
->>>>>>> c60a3ec7a56a5b15d984062b44e4f387926804e0
+
 </html>
