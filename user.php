@@ -153,6 +153,7 @@ if (isset($_POST['edit']))
                         </select>
                     </span>
                 </li>"; 
+                    
                 if ($isadmin == 1)
                 {
                     echo "<li><label for='isadmin'>Admin?</label><span><input type='checkbox' name='isadmin' checked></span>"; 
