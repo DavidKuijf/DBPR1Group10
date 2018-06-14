@@ -24,9 +24,9 @@
   <!-- start -->
 
     <ul class="optionMenu">
-      <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='home'>Thuis</a>
+      <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='stop'>Thuis</a>
       <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='ok'>Creëer poule</a>
-      <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='deselect-all'>Verwijder gekozen spelers</a>
+      <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='deselectAll'>Verwijder gekozen spelers</a>
       <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='log-out'>log uit</a>
       <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='create-user'>Maak account</a>
     </ul>
