@@ -17,7 +17,7 @@
     <div id="container">
         
         <h1>User Registration</h1>
-        <form method="post" name="registerform" id="registerform">
+        <form method="post" name="registerform" id="registerform" action="user_register.php">
             <ul>
                 <li>
                     <label for="firstname">First Name</label>
@@ -33,11 +33,11 @@
                 </li>
                 <li>
                     <label for="password">Password</label>
-                    <span><input type="password" name="password" id="password" onkeyup="check();" required></span><br>
+                    <span><input type="password" name="password" id="password" onkeyup="checkPassword();" required></span><br>
                 </li>
                 <li>
                     <label for="confirm_password">Confirm Password</label>
-                    <span><input type="password" name="confirm_password" id="confirm_password" onkeyup="check();" required></span><br>
+                    <span><input type="password" name="confirm_password" id="confirm_password" onkeyup="checkPassword();" required></span><br>
                 </li>
                 <li>
                     <span id="message"></span><br><br>
@@ -59,7 +59,6 @@
 </body>
 <script src="js/jquery.min.js"></script>
 <script src="js/navigationbar.js"></script> 
-<script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/userregistration.js"></script>
 </html>
 
