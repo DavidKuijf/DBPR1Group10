@@ -1,4 +1,11 @@
 <html>
+<?php 
+  session_start();
+  if(!isset($_SESSION['id']))
+    {
+      header('Location: index.php');
+    } 
+?> 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +17,8 @@
 </head>
 
 <body class='bgimg'>
-    <div id="tournamentOptionForm" class='form'>
+    
+    <div id='tournamentOptionForm' class='form'>
         
         <h1>Tournooi</h1><br>
         <span>Aantal deelnemers</span><br>
@@ -23,10 +31,11 @@
 <div id='fillable' class='fillable'></div>
 </body>
 
-<script src="js/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
-<script src="js/jquery.multi-select.js"></script>
-<script src='js/create_tournament.js'></script>
+<script src='js/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js'></script>
+<script src='js/jquery.multi-select.js'></script>
+<script src='js/create_tournament.js'></script> 
+
 
 
 </html>

@@ -1,4 +1,9 @@
-<?php
+<?php 
+  session_start();
+  if(!isset($_SESSION['id']))
+    {
+      header('Location: index.php');
+    } 
     $matchId = $_GET['matchid'];
     $score1 = $_GET['score1'];
     $score2 = $_GET['score2'];
