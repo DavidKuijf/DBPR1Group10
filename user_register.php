@@ -6,6 +6,7 @@
     <title>User Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/default.css"/>
 </head>
 <body>
     <ul class="optionMenu">
@@ -55,8 +56,9 @@
             </ul>
         </div>
     </div>
-</div>
-</body>    
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/navigationbar.js"></script> 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/userregistration.js"></script>
 </html>

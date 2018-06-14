@@ -26,10 +26,16 @@ h1 html {
   
 }
 
-.optionMenuContainer
+.optionMenuContainerLeft
 {
     float: left;
 }
+
+.optionMenuContainerRight
+{
+    float: right;
+}
+
 .optionMenuButton
 {
     display: block;
@@ -38,6 +44,7 @@ h1 html {
     padding: 14px 16px;
     text-decoration: none;
 }
+
 .optionMenuButton:hover
 {
     background-color: #111;

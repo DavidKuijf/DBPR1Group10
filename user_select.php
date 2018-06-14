@@ -22,31 +22,33 @@ if(!isset($_SESSION['id']))
     <link rel="stylesheet" type="text/css" href="css/default.css">
 </head>
 <body>
-<!-- start -->
-<ul class="optionMenu">
-    <li class='optionMenuContainer'><a class='optionMenuButton' href='#' id='deselectAll'>geen spelers</a>
-    <li class='optionMenuContainer'><a class='optionMenuButton' href='#' id='ok'>ok</a>
-    <li class='optionMenuContainer'><a class='optionMenuButton' href='#' id='stop'>stop</a>
-</ul>
+  <!-- start -->
 
-<div id='hideable'>
+    <ul class="optionMenu">
+      <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='stop'>Thuis</a>
+      <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='ok'>Creëer poule</a>
+      <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='deselectAll'>Verwijder gekozen spelers</a>
+      <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='logout'>log uit</a>
+      <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='createuser'>Maak account</a>
+    </ul>
 
-    <select id='selectableUserList' style='height:10vh' multiple='multiple' >
-    <?php
-    
-    //make a connection to the database
-    $conn = new \PDO('mysql:host=localhost:3306;dbname=betjepongdb','phpconn','yRZNpD:W');
-    $query = $conn->prepare('SELECT id,roepnaam,achternaam FROM speler');
-    $query->execute();
-        
-    //while we have results keep adding options to the list
-    while($result = $query->fetch())
-    {
-      echo '<option value='.$result['id'].'>' .$result['id'].' '. $result['roepnaam']." ". $result['achternaam'].'</option>';
-    }
-    ?>
-    </select>
-</div>
+  <div id='hideable'>
+      <select id='selectableUserList' style='height:10vh' multiple='multiple' >
+      <?php
+      
+      //make a connection to the database
+      $conn = new \PDO('mysql:host=localhost:3306;dbname=betjepongdb','phpconn','yRZNpD:W');
+      $query = $conn->prepare('SELECT id,roepnaam,achternaam FROM speler');
+      $query->execute();
+          
+      //while we have results keep adding options to the list
+      while($result = $query->fetch())
+      {
+        echo '<option value='.$result['id'].'>' .$result['id'].' '. $result['roepnaam']." ". $result['achternaam'].'</option>';
+      }
+      ?>
+      </select>
+  </div>
 </body>
 <script src='js/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js'></script>

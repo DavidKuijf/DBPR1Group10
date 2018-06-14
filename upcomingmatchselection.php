@@ -18,7 +18,13 @@ if(!isset($_SESSION['id']))
     <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css"/> 
 </head>
 <body class="bgimg">
-<div id="container" class="center">
+    <ul class="optionMenu">
+        <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='home'>Thuis</a>
+        <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='log-out'>log uit</a>
+        <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='create-user'>Maak account</a>
+    </ul>
+    <div id="container" class="center">
+
     <form method="GET" name="matchselector" id="matchselector" action="/upcomingmatchlist.php">
         <ul>
             <li>
@@ -37,6 +43,7 @@ if(!isset($_SESSION['id']))
     </form>
 </div>
 </body>
-<script src="js/jquery.min.js"></script>>
-<script src="js/userlogin.js"></script>
+<script src='js/jquery.min.js'></script>>
+<script src='js/userlogin.js'></script>
+<script src="js/navigationbar.js"></script>
 </html>
