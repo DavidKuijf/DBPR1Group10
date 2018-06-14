@@ -1,28 +1,30 @@
-h1 html {
+h1 html
+{
     height: 100%;
     font-family: Raleway, sans-serif;
     color: white;
-    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
-    
-
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
 }
 
-.loginform{
-    border: 3px solid #f1f1f1;
-    display: inline-block;
+.loginform
+{
+  border: 3px solid #f1f1f1;
+  display: inline-block;
 }
 
-.optionMenu{
+.optionMenu
+{
     list-style-type: none;
-     margin: 0;
+    margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
 }
+
 .reframe
 {
-    width:200px;
-    height:200px;
+    width: 200px;
+    height: 200px;
   
 }
 
@@ -72,7 +74,7 @@ h1 html {
     width: device-width;
     background-position: center;
     background-size: cover;
-    background-attachment:fixed;
+    background-attachment: fixed;
     margin : 0px;
     
 }
@@ -87,9 +89,9 @@ h1 html {
 
 .menuButton
 {
-    display:inline-block;
-    max-width:200px;
-    max-height:200px;
+    display: inline-block;
+    max-width: 200px;
+    max-height: 200px;
     width: 200px;
     height: 200px;
 }
@@ -176,7 +178,7 @@ h1 html {
     {
       opacity:0;
     }
-    
+
     100% 
     {
       opacity:1;

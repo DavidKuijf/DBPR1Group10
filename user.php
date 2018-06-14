@@ -91,9 +91,9 @@ if (isset($_POST['edit']))
 
 <body>
 <ul class="optionMenu">
-    <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='home'>Thuis</a>
-    <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='log-out'>log uit</a>
-    <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='create-user'>Maak account</a>
+    <li class="optionMenuContainerLeft"><a class="optionMenuButton" href="#" id="home">Thuis</a>
+    <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="log-out">log uit</a>
+    <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="create-user">Maak account</a>
 </ul>
 <div id="infocontainer">
     <h1>Gebruikersprofiel</h1>
@@ -149,7 +149,7 @@ if (isset($_POST['edit']))
                             <option value='1'>Silver</option>
                             <option value='2'>Gold</option>
                             <option value='3'>Platinum</option>
-                                <option value='4'>Diamond</option>
+                            <option value='4'>Diamond</option>
                         </select>
                     </span>
                 </li>"; 
@@ -173,4 +173,5 @@ if (isset($_POST['edit']))
 </body>
 <script src="js/jquery.min.js"></script>
 <script src="js/user.js"></script>
+<script src="js/navigationbar.js"></script>
 </html>

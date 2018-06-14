@@ -9,23 +9,20 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/registerlogin.css" />
 </head>
         
-    
-    <body id='body' class="bgimg">
-        <ul class="optionMenu">
-            <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='home'>Thuis</a>
-            <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='log-out'>log uit</a>
-            <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='create-user'>Maak account</a>
-        </ul>
-        <div id="centerscreen" class="center">
-            <div class="fade-in"> 
+<body id='body' class="bgimg">
+<ul class="optionMenu">
+    <li class="optionMenuContainerLeft"><a class="optionMenuButton" href="#" id="home">Thuis</a>
+    <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="log-out">log uit</a>
+    <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="create-user">Maak account</a>
+</ul>
+    <div id="centerscreen" class="center">
+        <div class="fade-in"> 
                 
-                <div id="menu" class="menu">
-                    <a href="scoreboard.php" class"menuButton"><img src="Images/vs.png" class='reframe'></a>
-                    <a href="upcomingmatchselection.php" class"menuButton"><img src="Images/podium.png" class='reframe'></a>
-                    <a href="create_tournament.php" class"menuButton"><img src="Images/tournament.png" class='reframe'></a>
-                    <a href="testpage.php" class"menuButton"><img src="Images/gears.png" class='reframe'></a>
-
-                </div>
+            <div id="menu" class="menu">
+                <a href="scoreboard.php" class"menuButton"><img src="Images/vs.png" class='reframe'></a>
+                <a href="upcomingmatchselection.php" class"menuButton"><img src="Images/podium.png" class='reframe'></a>
+                <a href="create_tournament.php" class"menuButton"><img src="Images/tournament.png" class='reframe'></a>
+                <a href="testpage.php" class"menuButton"><img src="Images/gears.png" class='reframe'></a>
             </div>
         </div>
     </div>
