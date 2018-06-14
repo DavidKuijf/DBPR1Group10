@@ -10,6 +10,9 @@ $("#optionButton").click(function() {
       $("#tournamentOptionForm").hide();
     }
   });
+  $('#home').hide();
+  $('#log-out').hide();
+  $('#create-user').hide();
 });
 
 var selected = [];
@@ -63,6 +66,15 @@ $("#ok").click(function() {
 $("#create-user").click(function() {
   window.location.replace("user_register.php");
 });
+
+  $('#createuser').click(function(){
+      window.location.replace('user_register.php');
+  });
+  
+  $('#logout').click(function(){
+      window.location.replace('logout.php');
+  });
+
 
 $("#log-out").click(function() {
   window.location.replace("logout.php");

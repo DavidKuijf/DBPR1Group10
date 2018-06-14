@@ -19,7 +19,15 @@ if(!isset($_SESSION['id']))
     <link rel="stylesheet" type="text/css" media="screen" href="css/tournamentlist.css"/>
 </head>
 <body class="bgimg">
-<div id="container" class="center" style='margin-top:20px;'>
+
+    <ul class="optionMenu">
+        <li class="optionMenuContainerLeft"><a class='optionMenuButton' href='#' id='home'>Thuis</a>
+        <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='log-out'>log uit</a>
+        <li class="optionMenuContainerRight"><a class='optionMenuButton' href='#' id='create-user'>Maak account</a>
+    </ul>
+    
+    <div id="container" class="center" style="margin-top:20px;">
+
     <form method="GET" name="matchselector" id="matchselector" action="/upcomingmatchlist.php">
         <ul>
             <li>
@@ -50,7 +58,13 @@ if(!isset($_SESSION['id']))
     ?>
 </div>
 </body>
+<<<<<<< HEAD
 <script src="js/jquery.min.js"></script>>
 <script src="js/userlogin.js"></script>
 <script src="js/tournamentlist.js"></script>
+=======
+<script src='js/jquery.min.js'></script>>
+<script src='js/userlogin.js'></script>
+<script src="js/navigationbar.js"></script>
+>>>>>>> c60a3ec7a56a5b15d984062b44e4f387926804e0
 </html>
