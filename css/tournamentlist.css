@@ -1,0 +1,13 @@
+.tournamentblock{
+    margin-left : 30vw;
+    margin-right: 30vw;
+    
+    border : 2px solid black;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgba(197, 202, 202, 0.446);
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 3px;
+}

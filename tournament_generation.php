@@ -141,9 +141,10 @@ function generate_2player_match($player1, $player2, $toernooinr, $tafel)
     ]);
 }
 
-$count = generate_tournament(2, $amountOfPlayers, $playerArray);
+generate_tournament(2, $amountOfPlayers, $playerArray);
 
-header("Location: upcomingmatchlist.php?toernooinr=$count");
+
+
     
 exit;
 
