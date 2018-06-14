@@ -61,10 +61,5 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js'></script>
   <script src='js/jquery.multi-select.js'></script>
   <script src='js/create_tournament.js'></script> 
-  <script>
-  maxSelected = amountOfPlayers;
-  console.log(maxSelected);
-  console.log("test");
-  </script>
 </html>
 

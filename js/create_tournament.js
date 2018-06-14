@@ -21,7 +21,7 @@ $('#selectableUserList').multiSelect({
     
     afterSelect: function(values){
       selected.push(values[0]);
-      if (selected.length>=parseInt(maxSelected)){
+      if (selected.length>=parseInt(amountOfPlayers)){
         $('#selectableUserList').attr('disabled','disabled');
         $('#selectableUserList').multiSelect('refresh');
       }
@@ -37,7 +37,7 @@ $('#selectableUserList').multiSelect({
 
 
   $('#deselectAll').click(function(){
-    $('#selectableUserList').multiSelect('deselectAll');
+    $('#selectableUserList').multiSelect('deselect_all');
     $('#selectableUserList').removeAttr('disabled','disabled');
     $('#selectableUserList').multiSelect('refresh');
     selected = [];
@@ -50,8 +50,8 @@ $('#selectableUserList').multiSelect({
 
 
   $('#ok').click(function(){
-     if(selected.length<parseInt(maxSelected)){
-         alert("Selecteer "+parseInt(maxSelected)+' spelers');
+     if(selected.length<parseInt(amountOfPlayers)){
+         alert("Selecteer "+parseInt(amountOfPlayers)+' spelers');
      }
      else{
         
