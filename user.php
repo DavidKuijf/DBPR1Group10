@@ -1,9 +1,12 @@
 <?php
 
+// resume session
 session_start();
 
+// start database connection
 $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
 
+// if a session exists, find out if the current logged in user is an admin, otherwise redirect to login
 if (isset($_SESSION['id']))
 {
     $userid = $_SESSION['id'];
@@ -21,25 +24,30 @@ else
     header('Location: index.php');
 } 
 
+// if a post request exists, store the current logged in user's id
 if (isset($_POST['id']))
 {
     $userid = $_POST['id'];
 }
 
+// fetch all user information from the database
 $query = $conn->prepare("SELECT roepnaam, achternaam, username, isadmin, skill FROM speler WHERE id = :id");
         
 $query->execute(['id' => $userid]);
     
 $result = $query->fetchAll();
     
+// store the information locally so we can use it
 $firstname = $result[0]['roepnaam'];
 $lastname = $result[0]['achternaam'];
 $username = $result[0]['username'];
 $isadmin = $result[0]['isadmin'];
 $skill = $result[0]['skill'];
 
+// echo the player's skill to the page so we can use it in JS
 echo '<text id="skill">' . $skill . '</text>';
 
+// if the post request has the edit tag change the values in the database to the entered values on the page
 if (isset($_POST['edit']))
 {
     $firstname = $_POST['firstname'];
@@ -89,6 +97,7 @@ if (isset($_POST['edit']))
     <form method="post">
         <ul>
             <?php
+            // if the current user is an admin, show the user selection box
             echo '<li>';
             if ($currentisadmin == 1)
             {
@@ -125,6 +134,7 @@ if (isset($_POST['edit']))
                 <span><input type="text" name="username" value='<?php echo "$username" ?>'></span><br>
             </li>
             <?php
+            // if the current user is an admin, show the skill selection box and the 'is admin' box
                 if ($currentisadmin == 1)
                 {
                     echo '

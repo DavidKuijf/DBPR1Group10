@@ -55,23 +55,26 @@
 </html>
 
 <?php
-
 if (isset($_POST['username']))
 {
+    // set all the post parameters as variables for readability
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $username = $_POST['username'];
     $password = $_POST['password'];
     $password_confirm = $_POST['confirm_password'];
 
+    // hash the password for security
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
+    // create a database connection
     $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
 
+    // get the posted username from the database
     $check_query = $conn->prepare("SELECT username FROM users WHERE username = :username");
-
     $check_query->execute(['username' => $username]);
 
+    // if the above query fetched no results, we can insert this new user into the database, otherwise tell the end user the username is already taken
     if (!$check_query->fetch())
     {
         $query = $conn->prepare("INSERT INTO speler (roepnaam, achternaam, username, password, skill, isadmin) 

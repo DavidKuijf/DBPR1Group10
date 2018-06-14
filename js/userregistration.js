@@ -1,10 +1,13 @@
+// when page is loaded
 $(document).ready(function() 
 {
+    // bind a keyup listener to the confirm password text box
     $('input[id=confirm_password]').keyup(function() 
     {
         // set password variable
         var confirm = $(this).val();
     
+        // check if the entered passwords match
         if (confirm == document.getElementById('password').value)
         {
             $('#confirm_password').removeClass('nomatch').addClass('match');
@@ -19,12 +22,14 @@ $(document).ready(function()
         checkPassword();
     });
 
+    // bind a keyup listener to the password text box
     $('input[id=password]').keyup(function() 
     {
         checkPassword();
-        
+
     }).focus(function() 
     {
+        // show and hide the password info box when the password text box is or is not selected
         $('#pswd_info').show();
     }).blur(function() 
     {
@@ -37,7 +42,7 @@ function checkPassword()
     // set password variable
     var password = $('input[id=password]').val();
 
-    //validate the length
+    // validate the length
     if (password.length < 8) 
     {
         $('#length').removeClass('valid').addClass('invalid');
@@ -48,7 +53,7 @@ function checkPassword()
         $('#length').removeClass('invalid').addClass('valid');
     }
 
-    //validate letter
+    // validate letter
     if (password.match(/[A-z]/)) {
         $('#letter').removeClass('invalid').addClass('valid');
         document.getElementById('register').disabled = true;
@@ -58,7 +63,7 @@ function checkPassword()
         $('#letter').removeClass('valid').addClass('invalid');
     }
 
-    //validate capital letter
+    // validate capital letter
     if (password.match(/[A-Z]/)) {
         $('#capital').removeClass('invalid').addClass('valid');
         document.getElementById('register').disabled = true;
@@ -68,7 +73,7 @@ function checkPassword()
         $('#capital').removeClass('valid').addClass('invalid');
     }
 
-    //validate number
+    // validate number
     if (password.match(/\d/)) 
     {
         $('#number').removeClass('invalid').addClass('valid');
@@ -77,15 +82,5 @@ function checkPassword()
     else 
     {
         $('#number').removeClass('valid').addClass('invalid');
-    }
-
-    if (password == document.getElementById('confirm_password').value)
-    {
-        $('#confirm_password').removeClass('nomatch').addClass('match');
-        document.getElementById('register').disabled = false;
-    }
-    else
-    {
-        $('#confirm_password').removeClass('match').addClass('nomatch');
     }
 }

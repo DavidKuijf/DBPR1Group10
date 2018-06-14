@@ -1,4 +1,5 @@
 <?php 
+    // resume session
     session_start();
 ?>
 
