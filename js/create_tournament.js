@@ -1,9 +1,10 @@
+var amountOfPlayers
 $('#optionButton').click(function(){
-    var amountOfPlayers = $('#deelnemersInput').val();
+    amountOfPlayers = $('#deelnemersInput').val();
     $.ajax({
             type: "POST",
             url: "user_select.php",
-            data: {amountofplayers:amountOfPlayers},
+            data: {amountOFPlayers:amountOfPlayers},
             success: function(data){
                 $('#fillable').html(data);
                 $('#tournamentOptionForm').hide();
@@ -13,7 +14,6 @@ $('#optionButton').click(function(){
 });
 
 var selected = [];
-
 
 $('#selectableUserList').multiSelect({
     selectableHeader: "<div class='custom-header'>Beschikbare spelers</div>",
@@ -29,20 +29,14 @@ $('#selectableUserList').multiSelect({
     afterDeselect: function(values){
       var index = selected.indexOf(values[0]);
       if (index > -1){
-        console.log('lol');
         selected.splice(index,1);
       }
     }
     
   });
 
-    
-  /*$('#select-all').click(function(){
-    $('#selectableUserList').multiSelect('select_all');
-    return false;
-  });*/
 
-  $('#deselectSll').click(function(){
+  $('#deselectAll').click(function(){
     $('#selectableUserList').multiSelect('deselectAll');
     $('#selectableUserList').removeAttr('disabled','disabled');
     $('#selectableUserList').multiSelect('refresh');
@@ -56,8 +50,8 @@ $('#selectableUserList').multiSelect({
 
 
   $('#ok').click(function(){
-     if(selected.length<parseInt(maxselected)){
-         alert("Selecteer "+parseInt(maxselected)+' spelers');
+     if(selected.length<parseInt(maxSelected)){
+         alert("Selecteer "+parseInt(maxSelected)+' spelers');
      }
      else{
         

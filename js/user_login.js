@@ -23,3 +23,7 @@ $('#loginForm').submit(function(event){
         }
     })
 });
+
+$('#makeAccountButton').click(function(){
+    window.location.assign('user_register.php');
+});

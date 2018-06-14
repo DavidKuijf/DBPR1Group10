@@ -85,7 +85,7 @@ if (isset($_POST['username']))
             'isadmin' => 0
         ]);
         
-        header('Location: user_login.php');
+        header('Location: index.php');
         die();
     }
     else

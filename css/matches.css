@@ -105,7 +105,8 @@ a{
     font-family: 'Anton', sans-serif;
     grid-area: number;
     text-align: center;
-    
+    display: table-cell;
+    vertical-align: middle;
     font-size: 50;
     color: white;
     background: black;

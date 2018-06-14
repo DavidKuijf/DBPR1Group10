@@ -27,10 +27,16 @@
             <li>
                 <button type='submit' name="login" id="login">Log In</button>
             </li>
+           
+           
+    </form>
+            <li>
+                <button name="makeAccountButton" id="makeAccountButton">Registreer</button>
+            </li>
             <li>
                 <span id='message'></span><br>
             </li>
-    </form>
+        </ul>
 </div>
 </body>
 <script src='js/jquery.min.js'></script>>
