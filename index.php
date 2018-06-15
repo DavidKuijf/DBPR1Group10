@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>DBPRGroup10</title>
+<title>Welkom op the betje pong webapp</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
     
 <head>
@@ -22,7 +22,7 @@
                 <a href="scoreboard.php" class"menuButton"><img src="Images/vs.png" class='reframe'></a>
                 <a href="upcomingmatchselection.php" class"menuButton"><img src="Images/podium.png" class='reframe'></a>
                 <a href="create_tournament.php" class"menuButton"><img src="Images/tournament.png" class='reframe'></a>
-                <a href="testpage.php" class"menuButton"><img src="Images/gears.png" class='reframe'></a>
+                <a href="user.php" class"menuButton"><img src="Images/gears.png" class='reframe'></a>
             </div>
         </div>
     </div>
