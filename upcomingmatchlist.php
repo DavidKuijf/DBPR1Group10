@@ -24,41 +24,60 @@ if(!isset($_SESSION['id']))
     <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="create-user">Maak account</a>
 </ul>
 <?php
+// establish a connection to the database
 $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
-    
+
+//if the Get has a tournament number
 if($_GET['toernooinr'] != "")
 {
     $toernooinr = $_GET['toernooinr'];
+
+    //prepare a query that gets all unfinished matches form the database
     $wedstrijdQuery = $conn->prepare("SELECT nummer,speler1,speler2,speler3,speler4,tafel FROM wedstrijd WHERE toernooi = :toernooinr AND tijd is null");
+    //gets all unfinished matches form the database
     $wedstrijdQuery->execute([
         'toernooinr'=> $toernooinr
     ]);
+
+    //prepare a query to see what the score is at this moment
     $scoreQuery = $conn->prepare("SELECT roepnaam,achternaam,score FROM deelnemer JOIN speler on deelnemer.spelerid = speler.id  WHERE toernooinr = :toernooinr");
+    //see what the score is at this moment
     $scoreQuery->execute(['toernooinr'=> $toernooinr]);
+    //open up a <div>
     echo "<div class ='scoreboard' name='scoreboard' id='scoreboard'><ul>";
 
+    //for each participant retrieve their score and echo it to the page
     while($scoreQueryResult = $scoreQuery->fetch())
     {
+        
         echo "<li>" . ucwords($scoreQueryResult['roepnaam'], "\t\r\n\f\v") . " " . ucwords($scoreQueryResult['achternaam'], "\t\r\n\f\v") . " heeft " . $scoreQueryResult['score'] . " punten</li>";
     }
-                
+    
+    //close the <div>
     echo "</ul></div>";
 }
 
+//else if the player id is not ''
 elseif($_GET['spelerid']!='')
 {
     $playerid = $_GET['spelerid'];
+    //prepare a query that fetches games based on a participating player
     $wedstrijdQuery = $conn->prepare("SELECT nummer,speler1,speler2,speler3,speler4,tafel FROM wedstrijd WHERE (speler1 = :id OR speler2 =:id OR speler3=:id OR speler4=:id) AND tijd is null");
     $wedstrijdQuery->execute([
         'id'=> $playerid
     ]);
 }
 
+//prepare a query to get player info
 $nameQuery = $conn->prepare("SELECT roepnaam,achternaam FROM speler WHERE id = :id");
             
+//open a <div>
 echo "<div id ='matches'>";
+
+//for each of the results of the query make a new matchblock
 while($wedstrijdQueryResult = $wedstrijdQuery->fetch())
 {  
+    //get all the players their info
     $nameQuery->execute(['id'=>$wedstrijdQueryResult['speler1']]);
     $speler1Naam = $nameQuery->fetch();
 
@@ -70,7 +89,8 @@ while($wedstrijdQueryResult = $wedstrijdQuery->fetch())
 
     $nameQuery->execute(['id'=>$wedstrijdQueryResult['speler4']]);
     $speler4Naam = $nameQuery->fetch();
-                
+    
+    //if it is a 2 player game us this template
     if($wedstrijdQueryResult['speler2'] == null)
     {
         echo 
@@ -84,7 +104,7 @@ while($wedstrijdQueryResult = $wedstrijdQuery->fetch())
             "</div>" .
 
             "<div class='matchblockversus'>" .
-                "<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>VS</a>" .
+                "VS" .
             "</div>".
 
             "<div class='matchblockteam2'>" .
@@ -113,6 +133,7 @@ while($wedstrijdQueryResult = $wedstrijdQuery->fetch())
         "</div>";
     }
 
+    //if it is a 4 player game use this template
     if($wedstrijdQueryResult['speler2'] != null)
     {
         echo 
@@ -126,7 +147,7 @@ while($wedstrijdQueryResult = $wedstrijdQuery->fetch())
             "</div>" .
 
             "<div class='matchblockversus'>" .
-                "<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>VS</a>" .
+                "VS" .
             "</div>" .
 
             "<div class='matchblockteam2'>".

@@ -3,7 +3,7 @@
     margin-left : 10vw;
     margin-right: 10vw;
     min-width: 950px;
-    min-height: 125px;
+    
     border : 2px solid black;
     padding: 30px;
     padding-top: 10px;
@@ -15,6 +15,7 @@
     "number team1  versus  team2  time"
     "number input1 versus  input2 button"
     "number .      versus  footer footer";
+    
     
     grid-gap: 0px;
 

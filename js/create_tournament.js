@@ -1,4 +1,5 @@
 var amountOfPlayers;
+//add click listener to the button at the bottom of the form
 $("#optionButton").click(function() {
   amountOfPlayers = $("#deelnemersInput").val();
   $.ajax({
@@ -10,17 +11,21 @@ $("#optionButton").click(function() {
       $("#tournamentOptionForm").hide();
     }
   });
-  $('#home').hide();
-  $('#log-out').hide();
-  $('#create-user').hide();
+
+  //hide the first set of buttons to prevent double nav bar
+  $("#home").hide();
+  $("#log-out").hide();
+  $("#create-user").hide();
 });
 
 var selected = [];
-
+//make the list a multislect list
 $("#selectableUserList").multiSelect({
+  //set the headers at the top
   selectableHeader: "<div class='custom-header'>Beschikbare spelers</div>",
   selectionHeader: "<div class='custom-header'>Gekozen spelers</div>",
 
+  //after selecting something add it to the list and check if we havent reached the player cap
   afterSelect: function(values) {
     selected.push(values[0]);
     if (selected.length >= parseInt(amountOfPlayers)) {
@@ -28,6 +33,8 @@ $("#selectableUserList").multiSelect({
       $("#selectableUserList").multiSelect("refresh");
     }
   },
+
+  //after deselecting remove it from the list
   afterDeselect: function(values) {
     var index = selected.indexOf(values[0]);
     if (index > -1) {
@@ -36,6 +43,7 @@ $("#selectableUserList").multiSelect({
   }
 });
 
+//add a listener to the deselect all button to deselect all and empty the list
 $("#deselectAll").click(function() {
   $("#selectableUserList").multiSelect("deselect_all");
   $("#selectableUserList").removeAttr("disabled", "disabled");
@@ -44,10 +52,13 @@ $("#deselectAll").click(function() {
   return false;
 });
 
+//add a listener to the stop button to redirect to index.php
 $("#stop").click(function() {
   window.location.replace("index.php");
 });
 
+//add a listener to the ok button to check if the correct amount of players have been selected and then
+//make an ajax call to tournament_generation to do all the generation stuff after that redirect to the match selection screen
 $("#ok").click(function() {
   if (selected.length < parseInt(amountOfPlayers)) {
     alert("Selecteer " + parseInt(amountOfPlayers) + " spelers");
@@ -58,23 +69,25 @@ $("#ok").click(function() {
       data: { selected: selected },
       success: function(data) {
         window.location.replace("/upcomingmatchselection.php");
+        window.location.replace(data);
       }
     });
   }
 });
 
+
+//add a bunch of nav bar listeners
 $("#create-user").click(function() {
   window.location.replace("user_register.php");
 });
 
-  $('#createuser').click(function(){
-      window.location.replace('user_register.php');
-  });
-  
-  $('#logout').click(function(){
-      window.location.replace('logout.php');
-  });
+$("#createuser").click(function() {
+  window.location.replace("user_register.php");
+});
 
+$("#logout").click(function() {
+  window.location.replace("logout.php");
+});
 
 $("#log-out").click(function() {
   window.location.replace("logout.php");

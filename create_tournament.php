@@ -1,8 +1,10 @@
 <?php
+    //Check if the user is logged in
   session_start();
   if(!isset($_SESSION['id']))
     {
-      header('Location: index.php');
+        //if not redirect to index.php
+        header('Location: index.php');
     } 
 ?>
 <html>
@@ -33,8 +35,6 @@
 </body>
 
 <script src='js/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js'></script>
-<script src='js/jquery.multi-select.js'></script>
 <script src='js/create_tournament.js'></script> 
 <script src='js/navigationbar.js'></script> 
 

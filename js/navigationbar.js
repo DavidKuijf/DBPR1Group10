@@ -1,3 +1,4 @@
+//A couple of listeners for the nav bar
 $("#home").click(function() {
   window.location.replace("index.php");
 });

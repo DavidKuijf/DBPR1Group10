@@ -47,9 +47,12 @@ if(!isset($_SESSION['id']))
 
 <div class ="tournamentlistcontainer" id="tournamentlistcontainer">
     <?php
+        //make a databse connection
         $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+        //prepare a query that gets all tournaments that have unfinished games
         $onGoingGamesQuery = $conn->prepare("SELECT count(toernooi)as aantal,toernooi FROM wedstrijd where tijd is null group by toernooi ");
         $onGoingGamesQuery->execute();
+        //foreach result make a box with tournament info in it
         while($onGoingGamesQueryResult = $onGoingGamesQuery->fetch())
         {
             echo ("<div class='tournamentblock' id='toernooi".$onGoingGamesQueryResult['toernooi']."'>"." Toernooi: ".$onGoingGamesQueryResult['toernooi']." Wedstrijden te spelen: ".$onGoingGamesQueryResult['aantal']."</div>");
