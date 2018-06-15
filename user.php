@@ -122,7 +122,7 @@ if (isset($_POST['edit']))
             ?>
             <li id="userid">
                 <label for="userid">User Id</label>
-                <span><input type="text" name="id" id="id" value='<?php echo "$userid" ?>'></span>
+                <span><input type="text" name="id" id="id" value='<?php echo "$userid" ?>' disabled></span>
             </li>
             <li>
                 <label for="firstname">Roepnaam</label>

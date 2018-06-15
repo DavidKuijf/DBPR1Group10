@@ -17,11 +17,6 @@ ul, li
     list-style-type: none;
 }
 
-#userid
-{
-    display: none;
-}
-
 #infocontainer
 {
     width: 400px;
