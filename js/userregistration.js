@@ -1,3 +1,5 @@
+var matching = false;
+
 // when page is loaded
 $(document).ready(function() {
   // bind a keyup listener to the confirm password text box
@@ -10,7 +12,7 @@ $(document).ready(function() {
       $("#confirm_password")
         .removeClass("nomatch")
         .addClass("match");
-      document.getElementById("register").disabled = false;
+      matching = true;
     } else {
       $("#confirm_password")
         .removeClass("match")
@@ -38,6 +40,10 @@ $(document).ready(function() {
 function checkPassword() {
   // set password variable
   var password = $("input[id=password]").val();
+  var length = false;
+  var letter = false;
+  var capital = false;
+  var number = false;
 
   // validate the length
   if (password.length < 8) {
@@ -45,10 +51,12 @@ function checkPassword() {
       .removeClass("valid")
       .addClass("invalid");
     document.getElementById("register").disabled = true;
+    length = false;
   } else {
     $("#length")
       .removeClass("invalid")
       .addClass("valid");
+    length = true;
   }
 
   // validate letter
@@ -56,11 +64,13 @@ function checkPassword() {
     $("#letter")
       .removeClass("invalid")
       .addClass("valid");
-    document.getElementById("register").disabled = true;
+    letter = true;
   } else {
     $("#letter")
       .removeClass("valid")
       .addClass("invalid");
+    document.getElementById("register").disabled = true;
+    letter = false;
   }
 
   // validate capital letter
@@ -68,11 +78,13 @@ function checkPassword() {
     $("#capital")
       .removeClass("invalid")
       .addClass("valid");
-    document.getElementById("register").disabled = true;
+    capital = true;
   } else {
     $("#capital")
       .removeClass("valid")
       .addClass("invalid");
+    document.getElementById("register").disabled = true;
+    capital = false;
   }
 
   // validate number
@@ -80,12 +92,16 @@ function checkPassword() {
     $("#number")
       .removeClass("invalid")
       .addClass("valid");
-      
-    document.getElementById("register").disabled = true;
-  } else {
-    $("#number")
-      .removeClass("valid")
-      .addClass("invalid");
+      number = true;
+    } else {
+      $("#number")
+        .removeClass("valid")
+        .addClass("invalid");
+      document.getElementById("register").disabled = true;
+      number = false;
+  }
+
+  if (length && letter && capital && number && matching) {
+    document.getElementById("register").disabled = false;
   }
 }
-
