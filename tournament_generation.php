@@ -10,6 +10,7 @@ if(!isset($_SESSION['id']))
 
 //set players to the ones passed of the post
 $players = $_GET['selected'];
+
 //make a database connection
 $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
 
@@ -34,9 +35,10 @@ class player
 
 $playerArray = [];
 
-//for each of the players fetch ther info and make a player object withtthat info
+//for each of the players fetch their info and make a player object withtthat info
 for($i = 0; $i < $amountOfPlayers ;$i++)
 {
+    
     $playerQuery->execute(['id'=>$players[$i]]);
     $playerQueryResult = $playerQuery->fetch();
     $playerArray[$i] = new player($playerQueryResult['id'],$playerQueryResult['roepnaam'],$playerQueryResult['achternaam']);
@@ -47,6 +49,7 @@ for($i = 0; $i < $amountOfPlayers ;$i++)
 //lastly it calls the generate rounds function
 function generate_tournament($players,$amountOfPlayers,$playerArray)
 {
+    
     $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
     $makeTournament = $conn->prepare("INSERT INTO toernooi VALUES()");
     $makeTournament->execute();
@@ -100,7 +103,7 @@ function combinations($n, $k)
 //this function makes all possible pairings and then calls write_2player_match for each of those pairings
 function generate_rounds($amountOfPlayers, $playerArray, $toernooinr)
 {
-    
+    $pastMatchups = [];
     $totalAmountOfPairings = combinations($amountOfPlayers, 2);
 
     //while the amount of pairings isn't what it should be
@@ -146,6 +149,6 @@ function write_2player_match($player1, $player2, $toernooinr, $tafel)
         'tafel'=>$tafel
     ]);
 }
-    
+generate_tournament(2, $amountOfPlayers, $playerArray);  
 exit;
 

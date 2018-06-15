@@ -35,6 +35,7 @@
 </body>
 
 <script src='js/jquery.min.js'></script>
+<script src='js/jquery.multi-select.js'></script>
 <script src='js/create_tournament.js'></script> 
 <script src='js/navigationbar.js'></script> 
 

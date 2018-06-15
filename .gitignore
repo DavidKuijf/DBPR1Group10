@@ -3,3 +3,5 @@ Images/*
 home/*
 node_modules/*
 
+DataBase/Betjepong_DataBase_Dump.sql
+DataBase/Database_Creation_Script.sql

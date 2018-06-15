@@ -68,10 +68,12 @@ $("#ok").click(function() {
       url: "tournament_generation.php",
       data: { selected: selected },
       success: function(data) {
-        window.location.replace("/upcomingmatchselection.php");
-        window.location.replace(data);
+        console.log("clicked");
+        window.location.replace("/upcomingmatchselection.php"); 
+        
       }
     });
+    
   }
 });
 

@@ -61,6 +61,5 @@ if(!isset($_SESSION['id']))
 </div>
 </body>
 <script  src='js/jquery.min.js'></script>
-<script src='js/userlogin.js'></script>
 <script src="js/navigationbar.js"></script>
 </html>
