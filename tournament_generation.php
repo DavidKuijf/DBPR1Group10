@@ -1,18 +1,23 @@
 <?php
 
 session_start();
-
+//check if the user is logged in
 if(!isset($_SESSION['id']))
 {
+    //if not redirect to index
     header("Location: index.php");
 } 
 
+//set players to the ones passed of the post
 $players = $_GET['selected'];
+//make a database connection
 $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
 
-$query = $conn->prepare("SELECT id,roepnaam,achternaam FROM speler WHERE id = :id");
+//prepare a query that select all info from selected players
+$playerQuery = $conn->prepare("SELECT id,roepnaam,achternaam FROM speler WHERE id = :id");
 $amountOfPlayers = count($players);
 
+//declare a player object
 class player
 {
     public $played = [];
@@ -29,13 +34,17 @@ class player
 
 $playerArray = [];
 
+//for each of the players fetch ther info and make a player object withtthat info
 for($i = 0; $i < $amountOfPlayers ;$i++)
 {
-    $query->execute(['id'=>$players[$i]]);
-    $result = $query->fetch();
-    $playerArray[$i] = new player($result['id'],$result['roepnaam'],$result['achternaam']);
+    $playerQuery->execute(['id'=>$players[$i]]);
+    $playerQueryResult = $playerQuery->fetch();
+    $playerArray[$i] = new player($playerQueryResult['id'],$playerQueryResult['roepnaam'],$playerQueryResult['achternaam']);
 }
 
+//this function inserts a new entry into the tounament tanle then fetches the number of that tournament
+//then adds all the players as participants to that tournament
+//lastly it calls the generate rounds function
 function generate_tournament($players,$amountOfPlayers,$playerArray)
 {
     $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
@@ -55,16 +64,13 @@ function generate_tournament($players,$amountOfPlayers,$playerArray)
             'id'=>$participant->{'id'}
         ]);
     }
-        
-    if($players = 2)
-    {
-        generate_rounds($amountOfPlayers, $playerArray ,intval($tournamentcountArray[0]));
-    }
-        
-    return intval($tournamentcountArray[0]);
+    
+    generate_rounds($amountOfPlayers, $playerArray ,intval($tournamentcountArray[0]));
+       
 }
 
 //  Credit to https://thydzik.com/php-factorial-and-combination-functions/ for doing this for me cuz im dumb
+//calculates factorial of the given number
 function factorial($n) 
 {
     if ($n <= 1) 
@@ -78,6 +84,7 @@ function factorial($n)
 }
      
 //Credit to https://thydzik.com/php-factorial-and-combination-functions/ for doing this for me cuz im dumb
+//calculates the amount of possible pairings
 function combinations($n, $k) 
 {
     //note this defualts to 0 if $n < $k
@@ -90,21 +97,16 @@ function combinations($n, $k)
     }
 }
 
+//this function makes all possible pairings and then calls write_2player_match for each of those pairings
 function generate_rounds($amountOfPlayers, $playerArray, $toernooinr)
 {
-    $pastMatchups = [];
-
-    //$done = false;
-    if($amountOfPlayers%2 != 0)
-    {
-        //if uneven give a random player a buy
-    }
-
+    
     $totalAmountOfPairings = combinations($amountOfPlayers, 2);
 
-    //for($i=0; $i < 10000; $i++){
+    //while the amount of pairings isn't what it should be
     while(count($pastMatchups) < $totalAmountOfPairings)
     {
+        //get 2 random players
         $random = rand(0, $amountOfPlayers - 1);
         $randomPlayer1 = $playerArray[$random];
             
@@ -112,27 +114,31 @@ function generate_rounds($amountOfPlayers, $playerArray, $toernooinr)
         $random = rand(0, $amountOfPlayers - 1);
         $randomPlayer2 = $playerArray[$random];
             
-
+        //if the players arent the same and the pairing doesn't exist 
         if ($randomPlayer1 != $randomPlayer2 && 
             !in_array($randomPlayer2, $randomPlayer1->played) && 
             !in_array(($randomPlayer1->{'id'} . " " . $randomPlayer2->{'id'}), $pastMatchups) && 
             !in_array(($randomPlayer2->{'id'} . " " . $randomPlayer1->{'id'}), $pastMatchups))
         {
+            //add the newly discovered matchup to the past pairings
             $contstring = $randomPlayer1->{'id'} . " " . $randomPlayer2->{'id'};
             array_push($pastMatchups, $contstring);
 
-            generate_2player_match($randomPlayer1, $randomPlayer2, $toernooinr, 1);
-
-            //echo(($randomPlayer1->{'id'}." ".$randomPlayer2->{'id'}));
-            //echo("<br>");
+            //generate the match for this pairing
+            write_2player_match($randomPlayer1, $randomPlayer2, $toernooinr, 1);
         }
     }
 }
 
-function generate_2player_match($player1, $player2, $toernooinr, $tafel)
+function write_2player_match($player1, $player2, $toernooinr, $tafel)
 {
+    //re-establish the connection because if you don't it doesnt work for some reason
     $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+
+    //prepare a query to insert the macth into the database
     $match = $conn->prepare("INSERT INTO wedstrijd(speler1,speler3,toernooi,tafel) VALUES(:id1,:id2,:toernooi,:tafel)");
+
+    //execute the query
     $match-> execute([
         'id1'=>$player1->{'id'},
         'id2'=>$player2->{'id'},
@@ -140,11 +146,6 @@ function generate_2player_match($player1, $player2, $toernooinr, $tafel)
         'tafel'=>$tafel
     ]);
 }
-
-generate_tournament(2, $amountOfPlayers, $playerArray);
-
-
-
     
 exit;
 

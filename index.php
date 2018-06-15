@@ -31,10 +31,10 @@
 </body>
 <!--including jquery-->
 <script src="js/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
 <script src="js/navigationbar.js"></script>
 <script src="js/user_login.js"></script>
 <script>
+        //if the user isn't logged bring up the login menu
         $.ajax({
         url: 'sessioncheck.php',
         type: 'POST',
