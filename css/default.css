@@ -45,6 +45,8 @@ h1 html
 
 .optionMenuButton
 {
+    font-family: Raleway, sans-serif;
+    font-size: 18px;
     display: block;
     color: white;
     text-align: center;
