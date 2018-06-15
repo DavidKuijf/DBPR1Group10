@@ -88,3 +88,4 @@ function checkPassword() {
       .addClass("invalid");
   }
 }
+
