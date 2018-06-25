@@ -1,12 +1,7 @@
 <?php
-    //Check if the user is logged in
-  session_start();
-  if(!isset($_SESSION['id']))
-    {
-        //if not redirect to index.php
-        header('Location: index.php');
-    } 
+    require 'sessioncheck.php';
 ?>
+
 <html>
 <head>
     <meta charset="utf-8" />

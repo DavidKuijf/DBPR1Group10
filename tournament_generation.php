@@ -1,18 +1,15 @@
 <?php
 
-session_start();
-//check if the user is logged in
-if(!isset($_SESSION['id']))
-{
-    //if not redirect to index
-    header("Location: index.php");
-} 
+require 'sessioncheck.php';
+
+
+//make a database connection
+$conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
 
 //set players to the ones passed of the post
 $players = $_GET['selected'];
 
-//make a database connection
-$conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+
 
 //prepare a query that select all info from selected players
 $playerQuery = $conn->prepare("SELECT id,roepnaam,achternaam FROM speler WHERE id = :id");

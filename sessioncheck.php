@@ -3,6 +3,11 @@
 session_start();
 if (isset($_SESSION['id'])) 
 {
-    echo "success";
+    echo "<script>
+    var loginsuccess = 'success';
+    </script>";
+}
+else{
+    header("Location: index.php");
 }
 ?>

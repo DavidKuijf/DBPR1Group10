@@ -1,7 +1,8 @@
 <?php
 
-// resume session
-session_start();
+
+require 'sessioncheck.php';
+
 
 // start database connection
 $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");

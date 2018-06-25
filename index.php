@@ -39,7 +39,7 @@
         url: 'sessioncheck.php',
         type: 'POST',
         success: function(result) {
-            if(result == 'success'){
+            if(loginsuccess == 'success'){
                 $('#overlay').css({'display' : 'none'});
             }
             else{

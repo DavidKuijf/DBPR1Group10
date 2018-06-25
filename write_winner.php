@@ -1,4 +1,7 @@
 <?php 
+
+require 'sessioncheck.php';
+
 $toernooinr = $_POST['tournamentnr'];
 //create database connection
 $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W"); 
