@@ -69,7 +69,7 @@ $("#ok").click(function() {
       data: { selected: selected },
       success: function(data) {
         console.log("clicked");
-        window.location.replace("/upcomingmatchselection.php"); 
+        window.location.replace("upcomingmatchselection.php"); 
         
       }
     });

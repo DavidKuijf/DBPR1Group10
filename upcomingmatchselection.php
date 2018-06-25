@@ -1,10 +1,5 @@
-<?php 
-session_start();
-
-if(!isset($_SESSION['id']))
-{
-    header("Location: index.php");
-} 
+<?php
+    require 'sessioncheck.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +21,7 @@ if(!isset($_SESSION['id']))
 </ul>
 <div id="container" class="center" style="margin-top:20px;">
 
-<form method="GET" name="matchselector" id="matchselector" action="/upcomingmatchlist.php">
+<form method="GET" name="matchselector" id="matchselector" action="upcomingmatchlist.php">
     <ul>
         <li>
             <label for="toernooinr">Toernooi id</label><br>
@@ -60,6 +55,6 @@ if(!isset($_SESSION['id']))
     ?>
 </div>
 </body>
-<script  src='js/jquery.min.js'></script>
+<script src='js/jquery.min.js'></script>
 <script src="js/navigationbar.js"></script>
 </html>

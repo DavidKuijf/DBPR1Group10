@@ -1,10 +1,10 @@
 <?php 
-session_start();
 
-if(!isset($_SESSION['id']))
-{
-    header("Location: index.php");
-} 
+require 'sessioncheck.php';
+
+
+
+
 
 $matchId = $_GET['matchid'];
 $score1 = $_GET['score1'];
