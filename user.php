@@ -54,7 +54,11 @@ if (isset($_POST['edit']))
     $lastname = $_POST['lastname'];
     $username = $_POST['username'];
     $id = $_POST['id'];
-    $skill = $_POST['skillselect'];
+
+    if (isset($_POST['skillselect']))
+    {
+        $skill = $_POST['skillselect'];
+    }
 
     if (isset($_POST['isadmin']))
     {
@@ -122,7 +126,7 @@ if (isset($_POST['edit']))
             ?>
             <li id="userid">
                 <label for="userid">User Id</label>
-                <span><input type="text" name="id" id="id" value='<?php echo "$userid" ?>' disabled></span>
+                <span><input type="text" name="id" id="id" value='<?php echo "$userid" ?>' readonly="readonly"></span>
             </li>
             <li>
                 <label for="firstname">Roepnaam</label>
