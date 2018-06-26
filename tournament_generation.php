@@ -1,10 +1,11 @@
 <?php
 
 require 'sessioncheck.php';
+require 'database.php';
 
 
 //make a database connection
-$conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+$conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
 
 //set players to the ones passed of the post
 $players = $_GET['selected'];
@@ -47,7 +48,7 @@ for($i = 0; $i < $amountOfPlayers ;$i++)
 function generate_tournament($players,$amountOfPlayers,$playerArray)
 {
     
-    $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+    $conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
     $makeTournament = $conn->prepare("INSERT INTO toernooi VALUES()");
     $makeTournament->execute();
 
@@ -133,7 +134,7 @@ function generate_rounds($amountOfPlayers, $playerArray, $toernooinr)
 function write_2player_match($player1, $player2, $toernooinr, $tafel)
 {
     //re-establish the connection because if you don't it doesnt work for some reason
-    $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+    $conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
 
     //prepare a query to insert the macth into the database
     $match = $conn->prepare("INSERT INTO wedstrijd(speler1,speler3,toernooi,tafel) VALUES(:id1,:id2,:toernooi,:tafel)");

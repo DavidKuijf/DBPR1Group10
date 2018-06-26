@@ -63,6 +63,7 @@
 </html>
 
 <?php
+require 'database.php';
 if (isset($_POST['username']))
 {
     // set all the post parameters as variables for readability
@@ -76,7 +77,7 @@ if (isset($_POST['username']))
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
     // create a database connection
-    $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+    $conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
 
     // get the posted username from the database
     $check_query = $conn->prepare("SELECT username FROM users WHERE username = :username");

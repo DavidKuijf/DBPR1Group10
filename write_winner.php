@@ -1,10 +1,10 @@
 <?php 
-
+require 'database.php';
 require 'sessioncheck.php';
 
 $toernooinr = $_POST['tournamentnr'];
 //create database connection
-$conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W"); 
+$conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword); 
 //prepare a query to determine 
 $winnerQuery = $conn->prepare("SELECT roepnaam,achternaam,score,id FROM deelnemer JOIN speler on deelnemer.spelerid = speler.id  WHERE toernooinr = :toernooinr and score = (SELECT MAX(score) FROM deelnemer where toernooinr = :toernooinr)");
 $winnerQuery->execute(['toernooinr'=> $toernooinr]);
