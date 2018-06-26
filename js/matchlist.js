@@ -21,9 +21,11 @@ $("a").click(function() {
       score2: score2,
       time: time,
       tournamentnr: tournamentnr
+    },
+    success: function(data) {
+      $("#scoreboard").html(data);
     }
   });
-
   determineWinner();
 });
 
@@ -35,7 +37,6 @@ function determineWinner() {
       url: "write_winner.php",
       data: { tournamentnr: tournamentnr },
       success: function(data) {
-        console.log("confirm");
         $("#scoreboard").html(data);
       }
     });

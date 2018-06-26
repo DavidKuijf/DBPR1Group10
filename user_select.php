@@ -1,5 +1,6 @@
 <?php
     require 'sessioncheck.php';
+    require 'database.php';
 ?>
 
 <html>

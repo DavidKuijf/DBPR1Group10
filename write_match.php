@@ -1,7 +1,7 @@
 <?php 
 
 require 'sessioncheck.php';
-
+require 'database.php';
 
 
 
@@ -12,7 +12,7 @@ $score2 = $_GET['score2'];
 $time = $_GET['time'];
 $tournamentnr = $_GET['tournamentnr'];
 //create a database connection
-$conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+$conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
 //prepare a query to update the score of the passed match
 $gameWriteQuery = $conn->prepare("UPDATE wedstrijd SET score1 = :score1, score2 = :score2 ,tijd = :tijd, datum = CURRENT_DATE() WHERE nummer = :id");
 //execute the query with the data from the get

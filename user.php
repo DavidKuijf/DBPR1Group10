@@ -1,11 +1,11 @@
 <?php
 
-
+require 'database.php';
 require 'sessioncheck.php';
 
 
 // start database connection
-$conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+$conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
 
 // if a session exists, find out if the current logged in user is an admin, otherwise redirect to login
 if (isset($_SESSION['id']))

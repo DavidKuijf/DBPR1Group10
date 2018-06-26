@@ -1,6 +1,7 @@
 <html>
 <?php 
 require 'sessioncheck.php';
+require 'database.php';
 ?>
 
 <title>Matchlist</title>
@@ -21,7 +22,7 @@ require 'sessioncheck.php';
 </ul>
 <?php
 // establish a connection to the database
-$conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+$conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
 
 //if the Get has a tournament number
 if($_GET['toernooinr'] != "")

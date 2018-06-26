@@ -9,7 +9,7 @@ if (isset($_POST['username']))
     $password = $_POST['password'];
 
     //make a connection with the database
-    $conn = new \PDO("mysql:host=localhost:3306;dbname=betjepongdb","phpconn","yRZNpD:W");
+    $conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
 
     //prepare the query to retrieve the password
     $query = $conn->prepare("SELECT password, id FROM speler WHERE username LIKE :username");
