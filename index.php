@@ -39,12 +39,14 @@
         url: 'sessioncheck.php',
         type: 'POST',
         success: function(result) {
-            if(loginsuccess == 'success'){
+            if(result == '<input type="hidden" value="test"/>'){
                 $('#overlay').css({'display' : 'none'});
+               
             }
             else{
                 $('#overlay').load('user_login.php');
                 $('#overlay').css({'display' : 'Block'});
+                
             }
         }
     });  

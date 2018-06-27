@@ -33,7 +33,7 @@
         </li>
         <li>
             <label for="spelerid">Speler ID</label><br>
-            <span><input type="number" name="spelerid" id="spelerid"></span><br>
+            <span><input type="number" name="spelerid" min="1" id="spelerid" value=<?php echo($_SESSION['id']); ?>></span><br>
         <li>
             <button type"submit" name="search" id="search">zoek</button>
         </li>

@@ -3,9 +3,7 @@
 session_start();
 if (isset($_SESSION['id'])) 
 {
-    echo "<script>
-    var loginsuccess = 'success';
-    </script>";
+    echo '<input type="hidden" value="test"/>';
 }
 else{
     header("Location: index.php");

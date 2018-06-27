@@ -1,7 +1,7 @@
 <?php
 
 require 'sessioncheck.php';
-require 'database.php';
+
 
 
 //make a database connection
