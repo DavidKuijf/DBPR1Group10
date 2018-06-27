@@ -20,6 +20,7 @@ require 'database.php';
     <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="log-out">log uit</a>
     <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="create-user">Maak account</a>
 </ul>
+
 <?php
 // establish a connection to the database
 $conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
@@ -183,11 +184,14 @@ while($wedstrijdQueryResult = $wedstrijdQuery->fetch())
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
     <script src="js/matchlist.js"></script>
     <script src="js/navigationbar.js"></script>
-    <script> 
-    <?php 
-    echo "var tournamentnr = '{$toernooinr}';" 
-    ?>
-
+    <script>
+    var tournamentnr = <?php if($_GET['toernooinr'] == ""){
+                                echo("0");
+                            }
+                            else{
+                                echo($_GET['toernooinr']);
+                            }?>;
+                            
     determineWinner();
     </script>
 </html> 
