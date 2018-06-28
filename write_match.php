@@ -96,4 +96,20 @@ elseif($score1 == $score2)
         'toernooinr'=>$tournamentnr
     ]);
 }
-?>
+
+
+
+//prepare a query to see what the score is at this moment
+$scoreQuery = $conn->prepare("SELECT roepnaam,achternaam,score FROM deelnemer JOIN speler on deelnemer.spelerid = speler.id  WHERE toernooinr = :toernooinr");
+//see what the score is at this moment
+$scoreQuery->execute(['toernooinr'=> $tournamentnr]);
+
+//for each participant retrieve their score and echo it to the page
+while($scoreQueryResult = $scoreQuery->fetch())
+{
+       
+    echo "<li>" . ucwords($scoreQueryResult['roepnaam'], "\t\r\n\f\v") . " " . ucwords($scoreQueryResult['achternaam'], "\t\r\n\f\v") . " heeft " . $scoreQueryResult['score'] . " punten</li>";
+}
+   
+//close the <div>
+echo "</ul>";     

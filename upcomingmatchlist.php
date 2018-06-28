@@ -20,15 +20,27 @@ require 'database.php';
     <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="log-out">log uit</a>
     <li class="optionMenuContainerRight"><a class="optionMenuButton" href="#" id="create-user">Maak account</a>
 </ul>
+e
 
 <?php
 // establish a connection to the database
 $conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
 
+
 //if the Get has a tournament number
 if($_GET['toernooinr'] != "")
 {
+    
     $toernooinr = $_GET['toernooinr'];
+
+    //check if the tournament exists at all
+    $tournamentExistQuery = $conn->prepare("SELECT * FROM toernooi WHERE nummer = :toernooinr and nummer is not null");
+    $tournamentExistQuery->execute([
+        'toernooinr'=> $toernooinr
+    ]);
+    if($tournamentExistQuery->rowcount()==0){
+      echo "<div class='center'><h3>This tournament seems to not exist please select one that does</h3></div>" ; 
+    }
 
     //prepare a query that gets all unfinished matches form the database
     $wedstrijdQuery = $conn->prepare("SELECT nummer,speler1,speler2,speler3,speler4,tafel FROM wedstrijd WHERE toernooi = :toernooinr AND tijd is null");
@@ -43,6 +55,8 @@ if($_GET['toernooinr'] != "")
     $scoreQuery->execute(['toernooinr'=> $toernooinr]);
     //open up a <div>
     echo "<div class ='scoreboard' name='scoreboard' id='scoreboard'><ul>";
+    
+  
 
     //for each participant retrieve their score and echo it to the page
     while($scoreQueryResult = $scoreQuery->fetch())
@@ -54,6 +68,7 @@ if($_GET['toernooinr'] != "")
     //close the <div>
     echo "</ul></div>";
 }
+
 
 //else if the player id is not ''
 elseif($_GET['spelerid']!='')
