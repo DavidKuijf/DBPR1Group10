@@ -116,6 +116,7 @@ function checkPassword() {
   }
 }
 
+// Backup check, for if something goes wrong on the html form.
 function checkLengths() {
   var username = $("input[id=username]").val();
   var firstname = $("input[id=firstname]").val();
