@@ -16,7 +16,7 @@ $("#loginForm").submit(function(event) {
       }
       if (result == "fail") {
         //else show this message
-        $("#message").html("incorrect username an/or password");
+        $("#message").html("incorrect username and/or password");
       }
     }
   });
