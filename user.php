@@ -70,7 +70,21 @@ if (isset($_POST['edit']))
         $isadmin = 0;
     }
 
-    $query = $conn->prepare("UPDATE speler SET roepnaam = :firstname, achternaam = :lastname, username = :username, isadmin = :isadmin, skill = :skill WHERE id = :id");
+    $checkquery = $conn->prepare("SELECT username FROM speler WHERE username LIKE :username");
+
+    $checkquery->execute([
+        'username' => $username
+    ]);
+
+    if (!$checkquery->fetch()) 
+    {
+        $query = $conn->prepare("UPDATE speler SET roepnaam = :firstname, achternaam = :lastname, username = :username, isadmin = :isadmin, skill = :skill WHERE id = :id");
+    }
+    else
+    {
+        echo "Error: username is already taken!";
+    }
+
 
     $query->execute([
         'firstname' => $firstname,
