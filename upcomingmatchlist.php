@@ -39,7 +39,7 @@ if($_GET['toernooinr'] != "")
         'toernooinr'=> $toernooinr
     ]);
     if($tournamentExistQuery->rowcount()==0){
-      echo "<div class='center'><h3>This tournament seems to not exist please select one that does</h3></div>" ; 
+      echo "<div class='center'><h3>Dit toernooi lijkt niet te bestaan probeer een ander id</h3></div>" ; 
     }
 
     //prepare a query that gets all unfinished matches form the database

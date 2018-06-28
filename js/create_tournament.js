@@ -1,17 +1,24 @@
 var amountOfPlayers;
+var minAmountOfPlayers = 6;
+var maxAmountOfPlayers = 10;
+
 //add click listener to the button at the bottom of the form
 $("#optionButton").click(function() {
   amountOfPlayers = $("#deelnemersInput").val();
-  $.ajax({
-    type: "POST",
-    url: "user_select.php",
-    data: { amountOFPlayers: amountOfPlayers },
-    success: function(data) {
-      $("#fillable").html(data);
-      $("#tournamentOptionForm").hide();
-    }
-  });
-
+  if(amountOfPlayers>=minAmountOfPlayers && amountOfPlayers<=maxAmountOfPlayers){
+    $.ajax({
+      type: "POST",
+      url: "user_select.php",
+      data: { amountOFPlayers: amountOfPlayers },
+      success: function(data) {
+        $("#fillable").html(data);
+        $("#tournamentOptionForm").hide();
+      }
+    });
+  }
+  else{
+    alert("Selecteer een hoeveelheid spelers tussen "+minAmountOfPlayers+" en "+maxAmountOfPlayers);
+  }
   //hide the first set of buttons to prevent double nav bar
   $("#home").hide();
   $("#log-out").hide();
