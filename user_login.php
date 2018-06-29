@@ -39,6 +39,6 @@
     </ul>
 </div>
 </body>
-<script src='js/jquery.min.js'></script>>
+<script src='js/jquery.min.js'></script>
 <script src='js/user_login.js'></script>
 </html>

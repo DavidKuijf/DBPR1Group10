@@ -22,7 +22,7 @@ $("#loginForm").submit(function(event) {
   });
 });
 
-//add a listener for the nav bar
+//add a listener for the Registreer button
 $("#makeAccountButton").click(function() {
   window.location.assign("user_register.php");
 });
