@@ -21,23 +21,23 @@
             <ul>
                 <li>
                     <label for="firstname">First Name</label>
-                    <span><input type="text" name="firstname" id="firstname" required></span><br>
+                    <span><input type="text" name="firstname" id="firstname" maxlength="20" required></span><br>
                 </li>
                 <li>
                     <label for="lastname">Last Name</label>
-                    <span><input type="text" name="lastname" id="lastname" required></span><br>
+                    <span><input type="text" name="lastname" id="lastname" maxlength="20" required></span><br>
                 </li>
                 <li>
                     <label for="username">Username</label>
-                    <span><input type="text" name="username" id="username" required></span><br>
+                    <span><input type="text" name="username" id="username" maxlength="20" required></span><br>
                 </li>
                 <li>
                     <label for="password">Password</label>
-                    <span><input type="password" name="password" id="password" required></span><br>
+                    <span><input type="password" name="password" id="password" maxlength="20" required></span><br>
                 </li>
                 <li>
                     <label for="confirm_password">Confirm Password</label>
-                    <span><input type="password" name="confirm_password" id="confirm_password" required></span><br>
+                    <span><input type="password" name="confirm_password" id="confirm_password" maxlength="20" required></span><br>
                 </li>
                 <li>
                     <span id="message"></span><br><br>
