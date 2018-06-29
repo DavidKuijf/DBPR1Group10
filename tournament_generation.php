@@ -1,6 +1,7 @@
 <?php
 
 require 'sessioncheck.php';
+require 'database.php';
 
 
 
@@ -45,10 +46,10 @@ for($i = 0; $i < $amountOfPlayers ;$i++)
 //this function inserts a new entry into the tounament tanle then fetches the number of that tournament
 //then adds all the players as participants to that tournament
 //lastly it calls the generate rounds function
-function generate_tournament($players,$amountOfPlayers,$playerArray)
+function generate_tournament($players,$amountOfPlayers,$playerArray,$conn)
 {
     
-    $conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
+    //$conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
     $makeTournament = $conn->prepare("INSERT INTO toernooi VALUES()");
     $makeTournament->execute();
 
@@ -66,7 +67,7 @@ function generate_tournament($players,$amountOfPlayers,$playerArray)
         ]);
     }
     
-    generate_rounds($amountOfPlayers, $playerArray ,intval($tournamentcountArray[0]));
+    generate_rounds($amountOfPlayers, $playerArray ,intval($tournamentcountArray[0]),$conn);
        
 }
 
@@ -99,7 +100,7 @@ function combinations($n, $k)
 }
 
 //this function makes all possible pairings and then calls write_2player_match for each of those pairings
-function generate_rounds($amountOfPlayers, $playerArray, $toernooinr)
+function generate_rounds($amountOfPlayers, $playerArray, $toernooinr ,$conn)
 {
     $pastMatchups = [];
     $totalAmountOfPairings = combinations($amountOfPlayers, 2);
@@ -126,15 +127,15 @@ function generate_rounds($amountOfPlayers, $playerArray, $toernooinr)
             array_push($pastMatchups, $contstring);
 
             //generate the match for this pairing
-            write_2player_match($randomPlayer1, $randomPlayer2, $toernooinr, 1);
+            write_2player_match($randomPlayer1, $randomPlayer2, $toernooinr, 1, $conn);
         }
     }
 }
 
-function write_2player_match($player1, $player2, $toernooinr, $tafel)
+function write_2player_match($player1, $player2, $toernooinr, $tafel, $conn)
 {
     //re-establish the connection because if you don't it doesnt work for some reason
-    $conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
+    //$conn = new \PDO("mysql:host=".$dbHost.";dbname=".$dbName,$dbUserName,$dbPassword);
 
     //prepare a query to insert the macth into the database
     $match = $conn->prepare("INSERT INTO wedstrijd(speler1,speler3,toernooi,tafel) VALUES(:id1,:id2,:toernooi,:tafel)");
@@ -147,6 +148,6 @@ function write_2player_match($player1, $player2, $toernooinr, $tafel)
         'tafel'=>$tafel
     ]);
 }
-generate_tournament(2, $amountOfPlayers, $playerArray);  
+generate_tournament(2, $amountOfPlayers, $playerArray,$conn);  
 exit;
 
