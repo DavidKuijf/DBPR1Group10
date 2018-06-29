@@ -23,10 +23,7 @@ $("a").click(function() {
       tournamentnr: tournamentnr
     },
     success: function(data) {
-      if(data != ""){
-        $("#scoreboard").html(data);
-      }
-      
+      $("#scoreboard").html(data);
     }
   });
   determineWinner();
@@ -40,10 +37,7 @@ function determineWinner() {
       url: "write_winner.php",
       data: { tournamentnr: tournamentnr },
       success: function(data) {
-        if(data != ""){
-          $("#scoreboard").html(data);
-        }
-        
+        $("#scoreboard").html(data);
       }
     });
   }

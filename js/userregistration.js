@@ -1,5 +1,5 @@
 // when page is loaded
-$(document).ready(function() {
+$(window).load(function() {
   // bind a keyup listener to the confirm password text box
   $("input[id=confirm_password]").keyup(function() {
     canRegister(checkPassword(), checkLengths());
