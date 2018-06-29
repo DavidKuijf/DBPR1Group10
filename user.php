@@ -76,7 +76,7 @@ if (isset($_POST['edit']))
         'username' => $username
     ]);
 
-    if (!$checkquery->fetch()) 
+    if ($checkquery->fetchAll() > 1) 
     {
         $query = $conn->prepare("UPDATE speler SET roepnaam = :firstname, achternaam = :lastname, username = :username, isadmin = :isadmin, skill = :skill WHERE id = :id");
     }
