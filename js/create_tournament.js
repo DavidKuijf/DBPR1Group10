@@ -74,8 +74,7 @@ $("#ok").click(function() {
       type: "GET",
       url: "tournament_generation.php",
       data: { selected: selected },
-      success: function(data) {
-        console.log("clicked");
+      success: function() {
         window.location.replace("upcomingmatchselection.php"); 
         
       }
